@@ -56,7 +56,7 @@ asdf plugin-add sops https://github.com/feniix/asdf-sops.git > /dev/null || true
 asdf install sops 3.7.1
 asdf global sops 3.7.1
 
-# Install titl
+# Install tilt
 asdf plugin add tilt > /dev/null || true
 asdf install tilt 0.22.14
 asdf global tilt 0.22.14
