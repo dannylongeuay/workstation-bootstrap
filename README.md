@@ -2,8 +2,10 @@
 
 Bash script to bootstrap a developer workstation
 
-## Run
+## How to Run
+
+Clone this repo and run the following script:
 
 ```
-curl -s -o- https://raw.githubusercontent.com/dannylongeuay/workstation-bootstrap/main/setup.sh | sudo bash
+./setup.sh
 ```
