@@ -1,6 +1,13 @@
 #!/bin/bash
 
-curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash || true
+printf "\n##### Installing OH MY ZSH #####\n\n"
+
+if [ ! -d "$HOME/.oh-my-zsh/" ]
+then
+    curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash || true
+else
+    $HOME/.oh-my-zsh/tools/upgrade.sh
+fi
 
 ZSH_CUSTOM_THEMES="$HOME/.oh-my-zsh/custom/themes"
 ZSH_SPACESHIP_THEME="$ZSH_CUSTOM_THEMES/spaceship.zsh-theme"

@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+printf "\n##### Installing OS Packages #####\n\n"
+
 # Install packages
 sudo apt update
 
@@ -21,5 +23,9 @@ zsh fonts-powerline ttf-ancient-fonts coreutils ca-certificates gnupg lsb-releas
 # Copy dotfiles
 /bin/bash scripts/dotfiles.sh
 
+printf "\n##### Performing Cleanup #####\n\n"
+
 # Cleanup
 sudo apt autoremove -y
+
+printf "\n##### Bootstrapping Process Complete #####\n"

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+printf "\n##### Installing Docker #####\n\n"
+
 sudo apt remove -y docker docker-engine docker.io containerd runc
 
 DOCKER_ARCHIVE_KEYRING="/usr/share/keyrings/docker-archive-keyring.gpg"
@@ -15,8 +17,6 @@ fi
 sudo apt update
 sudo apt install -y docker-ce docker-ce-cli containerd.io
 
-sudo groupadd docker > /dev/null || true
+getent group docker || sudo groupadd docker && sudo usermod -aG docker $USER
 
-sudo usermod -aG docker $USER
-
-sudo docker run hello-world
+sudo docker run --rm hello-world
