@@ -23,3 +23,5 @@ export EDITOR='vim'
 show-path() {
     awk -v RS=: '{print}' <<< $PATH
 }
+
+alias gs='git status'
