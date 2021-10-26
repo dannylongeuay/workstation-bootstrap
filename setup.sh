@@ -5,10 +5,13 @@ set -e
 /bin/bash scripts/packages.sh
 
 # Install docker
-/bin/bash scripts/docker.sh
+# /bin/bash scripts/docker.sh
 
 # Configure ZSH
-/bin/bash scripts/zsh.sh
+# /bin/bash scripts/zsh.sh
+
+# Configure Starship Prompt
+/bin/bash scripts/starship.sh
 
 # Install asdf
 /bin/bash scripts/asdf.sh

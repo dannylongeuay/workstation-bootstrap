@@ -4,7 +4,7 @@ printf "\n##### Installing OH MY ZSH #####\n\n"
 
 if [ ! -d "$HOME/.oh-my-zsh/" ]
 then
-    curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash || true
+    curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
 else
     $HOME/.oh-my-zsh/tools/upgrade.sh
 fi
