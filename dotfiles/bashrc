@@ -118,8 +118,17 @@ fi
 
 ##### USER DEFINED #####
 
+export EDITOR='vim'
+
+show-path() {
+    awk -v RS=: '{print}' <<< $PATH
+}
+
 # Starship
 eval "$(starship init bash)"
+
+# Kubectl
+source <(kubectl completion bash)
 
 # ASDF
 . $HOME/.asdf/asdf.sh
