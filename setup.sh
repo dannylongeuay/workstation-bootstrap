@@ -19,6 +19,9 @@ set -e
 # Copy dotfiles
 /bin/bash scripts/dotfiles.sh
 
+# Configure TMUX
+/bin/bash scripts/tmux.sh
+
 printf "\n##### Performing Cleanup #####\n\n"
 
 # Cleanup
