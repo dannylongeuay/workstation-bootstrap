@@ -66,3 +66,8 @@ printf "\n##### Installing Tilt #####\n\n"
 asdf plugin add tilt > /dev/null || true
 asdf install tilt 0.22.14
 asdf global tilt 0.22.14
+
+printf "\n##### Installing Nodejs #####\n\n"
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git > /dev/null || true
+asdf install nodejs 16.13.0
+asdf global nodejs 16.13.0
