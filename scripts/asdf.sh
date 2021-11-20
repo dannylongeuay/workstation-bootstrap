@@ -37,6 +37,8 @@ asdf plugin-add helm https://github.com/Antiarchitect/asdf-helm.git > /dev/null 
 asdf install helm 3.7.1
 asdf global helm 3.7.1
 
+helm plugin install https://github.com/databus23/helm-diff
+
 printf "\n##### Installing k3d #####\n\n"
 asdf plugin-add k3d https://github.com/spencergilbert/asdf-k3d.git > /dev/null || true
 asdf install k3d 5.0.1
