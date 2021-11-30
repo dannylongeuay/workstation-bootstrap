@@ -25,6 +25,10 @@ set -e
 # Configure TMUX
 /bin/bash scripts/tmux.sh
 
+printf "\n##### Set Default Shell #####\n\n"
+
+sudo chsh -s $(which fish) $USER
+
 printf "\n##### Performing Cleanup #####\n\n"
 
 # Cleanup
