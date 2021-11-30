@@ -23,11 +23,13 @@ then
     $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 fi
 
+sudo apt-add-repository -y ppa:fish-shell/release-3
+
 # Update and install packages
 sudo apt update
 
-sudo apt install -y curl git make build-essential libssl-dev zlib1g-dev \
+sudo apt install -y curl git make vim tmux build-essential libssl-dev zlib1g-dev \
 libbz2-dev libreadline-dev libsqlite3-dev wget llvm \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev \
-zsh fonts-powerline ttf-ancient-fonts coreutils ca-certificates gnupg lsb-release \
-whois dnsutils gh fzf dirmngr gpg gawk
+coreutils ca-certificates gnupg lsb-release whois dnsutils gh dirmngr gpg gawk \
+fish
