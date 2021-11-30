@@ -7,9 +7,6 @@ set -e
 # Install docker
 /bin/bash scripts/docker.sh
 
-# Configure ZSH
-# /bin/bash scripts/zsh.sh
-
 # Install fonts
 /bin/bash scripts/fonts.sh
 
@@ -25,9 +22,8 @@ set -e
 # Configure TMUX
 /bin/bash scripts/tmux.sh
 
-printf "\n##### Set Default Shell #####\n\n"
-
-sudo chsh -s $(which fish) $USER
+# Configure FISH
+/bin/bash scripts/fish.sh
 
 printf "\n##### Performing Cleanup #####\n\n"
 

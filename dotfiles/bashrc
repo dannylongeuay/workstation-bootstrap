@@ -127,12 +127,11 @@ show-path() {
 # Starship
 eval "$(starship init bash)"
 
-
 # ASDF
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
 # Auto-completion
 source <(kubectl completion bash)
-# source /usr/share/doc/fzf/examples/key-bindings.bash
-# source /usr/share/doc/fzf/examples/completion.bash
+source /usr/share/doc/fzf/examples/key-bindings.bash
+source /usr/share/doc/fzf/examples/completion.bash
