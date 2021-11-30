@@ -23,7 +23,7 @@ set -e
 /bin/bash scripts/tmux.sh
 
 # Configure FISH
-/bin/bash scripts/fish.sh
+/usr/bin/fish scripts/fish.sh
 
 printf "\n##### Performing Cleanup #####\n\n"
 
