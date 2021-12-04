@@ -73,3 +73,8 @@ printf "\n##### Installing Nodejs #####\n\n"
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git > /dev/null || true
 asdf install nodejs 16.13.0
 asdf global nodejs 16.13.0
+
+npm install -g commitizen
+
+npm install -g cz-emoji
+echo '{ "path": "cz-emoji" }' > ~/.czrc
