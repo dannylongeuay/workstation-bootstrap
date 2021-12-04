@@ -5,6 +5,7 @@ if status is-interactive
     set -gx EDITOR vim
     abbr --add --global gs git status
     abbr --add --global gc git commit -m
+    abbr --add --global gp git push
     abbr --add --global gd git diff
     abbr --add --global gl "git log --oneline"
     abbr --add --global ga git add -A
