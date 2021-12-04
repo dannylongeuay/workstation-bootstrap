@@ -2,6 +2,7 @@ if status is-interactive
     starship init fish | source
     source ~/.asdf/asdf.fish
     doctl completion fish | source
+    set -gx EDITOR vim
     abbr --add --global gs git status
     abbr --add --global gc git commit -m
     abbr --add --global gd git diff
