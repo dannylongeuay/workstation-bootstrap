@@ -27,6 +27,9 @@ printf "\n##### Bootstrapping Process Started #####\n"
 # Configure FISH
 /usr/bin/fish scripts/fish.sh
 
+# Configure GIT
+/bin/bash scripts/gitconfig.sh
+
 printf "\n##### Performing Cleanup #####\n\n"
 
 # Cleanup

@@ -7,12 +7,13 @@ if [ ! -d "$HOME/.asdf" ]
 then
     git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.1 > /dev/null || true
 else
+    . $HOME/.asdf/asdf.sh
     asdf update
 fi
 
 . $HOME/.asdf/asdf.sh
 
-if ! python --version > /dev/null
+if ! which python > /dev/null
 then
     printf "\n##### Installing Python #####\n\n"
     asdf plugin-add python > /dev/null || true
@@ -20,7 +21,7 @@ then
     asdf global python 3.9.4
 fi
 
-if ! ansible --version > /dev/null
+if ! which ansible > /dev/null
 then
     printf "\n##### Installing Ansible #####\n\n"
     asdf plugin add ansible-base https://github.com/amrox/asdf-pyapp.git > /dev/null || true
@@ -28,7 +29,7 @@ then
     asdf global ansible-base 2.10.15
 fi
 
-if ! doctl version > /dev/null
+if ! which doctl > /dev/null
 then
     printf "\n##### Installing Digital Ocean CLI #####\n\n"
     asdf plugin-add doctl https://github.com/maristgeek/asdf-doctl.git > /dev/null || true
@@ -36,7 +37,7 @@ then
     asdf global doctl 1.65.0
 fi
 
-if ! go version > /dev/null
+if ! which go > /dev/null
 then
     printf "\n##### Installing Golang #####\n\n"
     asdf plugin-add golang https://github.com/kennyp/asdf-golang.git > /dev/null || true
@@ -44,7 +45,7 @@ then
     asdf global golang 1.17.2
 fi
 
-if ! terraform version > /dev/null
+if ! which terraform > /dev/null
 then
     printf "\n##### Installing Terraform #####\n\n"
     asdf plugin-add terraform https://github.com/asdf-community/asdf-hashicorp.git > /dev/null || true
@@ -52,7 +53,7 @@ then
     asdf global terraform 1.0.11
 fi
 
-if ! helm version > /dev/null
+if ! which helm > /dev/null
 then
     printf "\n##### Installing Helm #####\n\n"
     asdf plugin-add helm https://github.com/Antiarchitect/asdf-helm.git > /dev/null || true
@@ -65,7 +66,7 @@ then
     helm plugin install https://github.com/databus23/helm-diff
 fi
 
-if ! k3d version > /dev/null
+if ! which k3d > /dev/null
 then
     printf "\n##### Installing k3d #####\n\n"
     asdf plugin-add k3d https://github.com/spencergilbert/asdf-k3d.git > /dev/null || true
@@ -73,7 +74,7 @@ then
     asdf global k3d 5.0.1
 fi
 
-if ! kubectl version > /dev/null
+if ! which kubectl > /dev/null
 then
     printf "\n##### Installing Kubernetes CLI #####\n\n"
     asdf plugin-add kubectl https://github.com/asdf-community/asdf-kubectl.git > /dev/null || true
@@ -81,7 +82,7 @@ then
     asdf global kubectl 1.22.2
 fi
 
-if ! poetry --version > /dev/null
+if ! which poetry > /dev/null
 then
     printf "\n##### Installing Poerty #####\n\n"
     asdf plugin-add poetry https://github.com/asdf-community/asdf-poetry.git > /dev/null || true
@@ -89,7 +90,7 @@ then
     asdf global poetry 1.1.11
 fi
 
-if ! pulumi version > /dev/null
+if ! which pulumi > /dev/null
 then
     printf "\n##### Installing Pulumi #####\n\n"
     asdf plugin-add pulumi https://github.com/canha/asdf-pulumi.git > /dev/null || true
@@ -97,7 +98,7 @@ then
     asdf global pulumi 3.16.0
 fi
 
-if ! sops --version > /dev/null
+if ! which sops > /dev/null
 then
     printf "\n##### Installing SOPS #####\n\n"
     asdf plugin-add sops https://github.com/feniix/asdf-sops.git > /dev/null || true
@@ -105,7 +106,7 @@ then
     asdf global sops 3.7.1
 fi
 
-if ! tilt version > /dev/null
+if ! which tilt > /dev/null
 then
     printf "\n##### Installing Tilt #####\n\n"
     asdf plugin add tilt > /dev/null || true
@@ -113,7 +114,7 @@ then
     asdf global tilt 0.22.14
 fi
 
-if ! node --version > /dev/null
+if ! which node > /dev/null
 then
     printf "\n##### Installing Nodejs #####\n\n"
     asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git > /dev/null || true

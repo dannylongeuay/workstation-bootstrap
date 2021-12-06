@@ -25,7 +25,7 @@ if test ! -L /usr/local/sbin/bat
   sudo ln -s /usr/bin/batcat /usr/local/sbin/bat
 end
 
-if test ! (fisher list | grep fisher)
+if test ! -f ~/.config/fish/functions/fisher.fish
   curl -sL https://git.io/fisher | source && \
   fisher install jorgebucaran/fisher
 end
