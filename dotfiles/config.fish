@@ -3,7 +3,7 @@ if status is-interactive
     source ~/.asdf/asdf.fish
     doctl completion fish | source
     export EDITOR=vim
-    alias aws='docker run --rm -it -v ~/.aws:/root/.aws -v (pwd):/aws -E AWS_PROFILE amazon/aws-cli'
+    alias aws='docker run --rm -it -v ~/.aws:/root/.aws -v (pwd):/aws -e AWS_PROFILE amazon/aws-cli'
     abbr --add --global gs git status
     abbr --add --global gc git commit -m
     abbr --add --global gp git push
