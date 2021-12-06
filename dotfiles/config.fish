@@ -3,7 +3,7 @@ if status is-interactive
     source ~/.asdf/asdf.fish
     doctl completion fish | source
     export EDITOR=vim
-    alias aws='docker run --rm -it -v ~/.aws:/root/.aws -v (pwd):/aws -e AWS_PROFILE amazon/aws-cli'
+    alias daws='docker run --rm -it -v ~/.aws:/root/.aws -v (pwd):/aws -e AWS_PROFILE amazon/aws-cli'
     abbr --add --global gs git status
     abbr --add --global gc git commit -m
     abbr --add --global gp git push
@@ -28,5 +28,13 @@ function aws_login
     else
         docker run --rm -it -v ~/.aws:/root/.aws sportradar/aws-azure-login
         export AWS_PROFILE=default
+    end
+end
+
+function kconf
+    if test $argv
+        aws eks update-kubeconfig --name $argv --region us-west-2
+    else
+        echo "Specifiy the cluster name! i.e. 'kconf infra-prod-usw2-a'"
     end
 end
