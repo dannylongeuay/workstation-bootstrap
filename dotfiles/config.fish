@@ -14,3 +14,19 @@ if status is-interactive
     abbr --add --global ka kubectl get all -A
     abbr --add --global k kubectl
 end
+
+function show-path
+    for item in $PATH
+        echo $item
+    end
+end
+
+function aws_login
+    if test $argv
+        docker run --rm -it -v ~/.aws:/root/.aws sportradar/aws-azure-login --profile=$argv --no-prompt
+        export AWS_PROFILE=$argv
+    else
+        docker run --rm -it -v ~/.aws:/root/.aws sportradar/aws-azure-login
+        export AWS_PROFILE=default
+    end
+end
