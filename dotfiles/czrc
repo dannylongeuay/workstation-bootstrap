@@ -11,10 +11,10 @@
           "name": "feat"
         },
         {
-          "emoji": "🎨",
-          "code": ":art:",
-          "description": "Improving structure / format of the code.",
-          "name": "style"
+          "emoji": "🐛",
+          "code": ":bug:",
+          "description": "Fixing a bug.",
+          "name": "fix"
         },
         {
           "emoji": "⚡️",
@@ -23,10 +23,10 @@
           "name": "perf"
         },
         {
-          "emoji": "🐛",
-          "code": ":bug:",
-          "description": "Fixing a bug.",
-          "name": "fix"
+          "emoji": "🎨",
+          "code": ":art:",
+          "description": "Improving structure / format of the code.",
+          "name": "style"
         },
         {
           "emoji": "📝",
@@ -87,12 +87,6 @@
           "code": ":construction:",
           "description": "Work in progress.",
           "name": "wip"
-        },
-        {
-          "emoji": "💚",
-          "code": ":green_heart:",
-          "description": "Fixing CI Build.",
-          "name": "fix-ci"
         },
         {
           "emoji": "👷",

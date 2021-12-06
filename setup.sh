@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+printf "\n##### Bootstrapping Process Started #####\n"
+
 # Install packages
 /bin/bash scripts/packages.sh
 

@@ -1,0 +1,26 @@
+[advice]
+    statusHints = false
+
+[color]
+    ui = true
+
+[core]
+    editor = vim
+
+[diff]
+    tool = vimdiff
+
+[difftool]
+    prompt = false
+
+[fetch]
+    prune = true
+
+[merge]
+    tool = vimdiff
+
+[pull]
+    ff = only
+
+[push]
+    default = simple
