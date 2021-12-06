@@ -126,3 +126,11 @@ then
     npm install -g commitizen
     npm install -g cz-emoji
 fi
+
+if ! which delta > /dev/null
+then
+    printf "\n##### Installing Delta #####\n\n"
+    asdf plugin add delta https://github.com/andweeb/asdf-delta.git > /dev/null || true
+    asdf install delta 0.11.0
+    asdf global delta 0.11.0
+fi

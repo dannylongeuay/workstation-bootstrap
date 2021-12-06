@@ -6,18 +6,22 @@
 
 [core]
     editor = vim
+    pager = delta
+
+[delta]
+    navigate = true
 
 [diff]
-    tool = vimdiff
-
-[difftool]
-    prompt = false
+    colorMoved = default
 
 [fetch]
     prune = true
 
+[interactive]
+    diffFilter = delta --color-only
+
 [merge]
-    tool = vimdiff
+    conflictstyle = diff3
 
 [pull]
     ff = only

@@ -7,7 +7,7 @@ if status is-interactive
     abbr --add --global gs git status
     abbr --add --global gc git commit -m
     abbr --add --global gp git push
-    abbr --add --global gd "git difftool --cached"
+    abbr --add --global gd "git diff --cached"
     abbr --add --global gl "git log --oneline"
     abbr --add --global ga git add -A
     abbr --add --global g git
