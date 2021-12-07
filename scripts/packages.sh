@@ -23,7 +23,7 @@ then
     $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 fi
 
-if ! sudo apt-add-repository -L | grep fish-shell
+if ! sudo apt-add-repository -L | grep fish-shell > /dev/null
 then
     sudo apt-add-repository -y ppa:fish-shell/release-3
 fi

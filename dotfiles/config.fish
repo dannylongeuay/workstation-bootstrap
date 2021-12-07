@@ -34,6 +34,7 @@ end
 function kconf
     if test $argv
         aws eks update-kubeconfig --name $argv --region us-west-2
+        export KUBE_CLUSTER_CONTEXT=$argv
     else
         echo "Specifiy the cluster name! i.e. 'kconf infra-prod-usw2-a'"
     end
