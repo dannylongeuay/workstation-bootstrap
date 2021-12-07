@@ -2,6 +2,11 @@
   "path": "cz-emoji",
   "config": {
     "cz-emoji": {
+      "skipQuestions": [
+        "body",
+        "breaking",
+        "issues"
+      ],
       "conventional": true,
       "types": [
         {
