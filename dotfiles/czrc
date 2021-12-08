@@ -28,6 +28,18 @@
           "name": "perf"
         },
         {
+          "emoji": "🔧",
+          "code": ":wrench:",
+          "description": "Auxiliary tool or build process changes.",
+          "name": "chore"
+        },
+        {
+          "emoji": "♻️",
+          "code": ":recycle:",
+          "description": "Refactoring code.",
+          "name": "refactor"
+        },
+        {
           "emoji": "🎨",
           "code": ":art:",
           "description": "Improving structure / format of the code.",
@@ -38,6 +50,12 @@
           "code": ":pencil:",
           "description": "Writing docs.",
           "name": "docs"
+        },
+        {
+          "emoji": "✅",
+          "code": ":white_check_mark:",
+          "description": "Adding tests.",
+          "name": "test"
         },
         {
           "emoji": "🚀",
@@ -64,12 +82,6 @@
           "name": "init"
         },
         {
-          "emoji": "✅",
-          "code": ":white_check_mark:",
-          "description": "Adding tests.",
-          "name": "test"
-        },
-        {
           "emoji": "🔒",
           "code": ":lock:",
           "description": "Fixing security issues.",
@@ -94,28 +106,22 @@
           "name": "wip"
         },
         {
+          "emoji": "💚",
+          "code": ":green_heart:",
+          "description": "Build system dependency changes.",
+          "name": "build"
+        },
+        {
           "emoji": "👷",
           "code": ":construction_worker:",
           "description": "Adding CI build system.",
           "name": "ci"
         },
         {
-          "emoji": "♻️",
-          "code": ":recycle:",
-          "description": "Refactoring code.",
-          "name": "refactoring"
-        },
-        {
           "emoji": "🐳",
           "code": ":whale:",
           "description": "Work about Docker.",
           "name": "docker"
-        },
-        {
-          "emoji": "🔧",
-          "code": ":wrench:",
-          "description": "Changing configuration files.",
-          "name": "config"
         },
         {
           "emoji": "✏️",
