@@ -23,7 +23,7 @@ then
     $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 fi
 
-if ! sudo apt-add-repository -L | grep fish-shell
+if ! sudo apt-add-repository -L | grep fish-shell > /dev/null
 then
     sudo apt-add-repository -y ppa:fish-shell/release-3
 fi
@@ -35,4 +35,4 @@ sudo apt install -y curl git make vim tmux build-essential libssl-dev zlib1g-dev
 libbz2-dev libreadline-dev libsqlite3-dev wget llvm \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev \
 coreutils ca-certificates gnupg lsb-release whois dnsutils gh dirmngr gpg gawk \
-fish fzf fd-find bat httpie bashtop
+fish fzf fd-find bat httpie bashtop tree

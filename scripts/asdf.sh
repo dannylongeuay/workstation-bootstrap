@@ -29,6 +29,14 @@ then
     asdf global ansible-base 2.10.15
 fi
 
+if ! which aws > /dev/null
+then
+    printf "\n##### Installing AWS CLI #####\n\n"
+    asdf plugin add awscli > /dev/null || true
+    asdf install awscli 2.4.5
+    asdf global awscli 2.4.5
+fi
+
 if ! which doctl > /dev/null
 then
     printf "\n##### Installing Digital Ocean CLI #####\n\n"

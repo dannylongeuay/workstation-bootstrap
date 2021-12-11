@@ -1,0 +1,17 @@
+[aws]
+disabled = true
+
+
+[custom.aws]
+style = "bold blue"
+symbol = "☁️ "
+command = "echo $AWS_PROFILE"
+when = """ test (echo $AWS_PROFILE) """
+format = 'aws [$symbol ($output) ]($style)'
+
+[custom.kubernetes]
+style = "cyan bold"
+symbol = "⛵"
+command = "echo $KUBE_CLUSTER_CONTEXT"
+when = """ test (echo $KUBE_CLUSTER_CONTEXT) """
+format = 'k8s [$symbol ($output) ]($style)'
