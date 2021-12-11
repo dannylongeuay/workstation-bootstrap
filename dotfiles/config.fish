@@ -6,13 +6,15 @@ if status is-interactive
     alias daws='docker run --rm -it -v ~/.aws:/root/.aws -v (pwd):/aws -e AWS_PROFILE amazon/aws-cli'
     abbr --add --global gs git status
     abbr --add --global gc git commit -m
-    abbr --add --global gp git push
+    abbr --add --global gpl git pull
+    abbr --add --global gpu git push
     abbr --add --global gd "git diff --cached"
     abbr --add --global gl "git log --oneline"
     abbr --add --global ga git add -A
     abbr --add --global g git
     abbr --add --global ka kubectl get all -A
     abbr --add --global k kubectl
+    abbr --add --global tl tree | less
 end
 
 function show-path
