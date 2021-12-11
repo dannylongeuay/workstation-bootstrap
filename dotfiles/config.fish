@@ -8,7 +8,7 @@ if status is-interactive
     abbr --add --global gc git commit -m
     abbr --add --global gpl git pull
     abbr --add --global gpu git push
-    abbr --add --global gd "git diff --cached"
+    abbr --add --global gd git diff HEAD
     abbr --add --global gl "git log --oneline"
     abbr --add --global ga git add -A
     abbr --add --global g git
