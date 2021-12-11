@@ -14,7 +14,7 @@ if status is-interactive
     abbr --add --global g git
     abbr --add --global ka kubectl get all -A
     abbr --add --global k kubectl
-    abbr --add --global tl tree | less
+    abbr --add --global tl "tree | less"
 end
 
 function show-path
