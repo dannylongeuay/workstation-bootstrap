@@ -90,6 +90,14 @@ then
     asdf global kubectl 1.22.2
 fi
 
+if ! which kubeseal > /dev/null
+then
+    printf "\n##### Installing Kubeseal #####\n\n"
+    asdf plugin-add kubeseal > /dev/null || true
+    asdf install kubeseal 0.16.0
+    asdf global kubeseal 0.16.0
+fi
+
 if ! which poetry > /dev/null
 then
     printf "\n##### Installing Poerty #####\n\n"
