@@ -5,7 +5,8 @@ if status is-interactive
     export EDITOR=vim
     alias daws='docker run --rm -it -v ~/.aws:/root/.aws -v (pwd):/aws -e AWS_PROFILE amazon/aws-cli'
     abbr --add --global gs git status
-    abbr --add --global gc git commit -m
+    abbr --add --global gc git checkout
+    abbr --add --global gcb git checkout -b
     abbr --add --global gpl git pull
     abbr --add --global gpu git push
     abbr --add --global gd git diff HEAD
