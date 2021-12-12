@@ -7,10 +7,10 @@ This repo contains scripts that I used to bootstrap/update my personal and profr
 - [Disclaimer](#disclaimer)
 - [Usage](#usage)
 - [Features](#features)
+  - [Shell](#shell)
   - [Packages](#packages)
   - [Docker](#docker)
   - [ASDF](#asdf)
-  - [Shell](#shell)
   - [Dotfiles](#dotfiles)
   - [Tmux](#tmux)
   - [Git](#git)
@@ -36,11 +36,39 @@ Then log out and log back in for the changes to take full affect.
 
 Outlined below are various features this bootstrapping process offers. This is not an exhaustive list, but rather a highlight reel.
 
+## Shell
+
+[fish](https://fishshell.com/) is set as the default shell and [starship](https://starship.rs/) is used for the prompt.
+
+The following fish plugins are installed:
+
+- [jorgebucaran/fisher](https://github.com/jorgebucaran/fisher)
+- [PatrickF1/fzf.fish](https://github.com/PatrickF1/fzf.fish)
+- [evanlucas/fish-kubectl-completions](https://github.com/evanlucas/fish-kubectl-completions)
+
+Hotkeys:
+
+Find files - <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F</kbd>
+
+![Fish Find Example Usage](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/fish_find.png)
+
+Search command history - <kbd>Ctrl</kbd>+<kbd>R</kbd>
+
+![Fish History Example Usage](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/fish_history.png)
+
+Accept entire autosuggestion - <kbd>Ctrl</kbd>+<kbd>F</kbd>
+
+Accept first suggested word - <kbd>Alt</kbd>+<kbd>F</kbd>
+
 ## Packages
+
+Noteworthy packages installed using aptitude:
 
 - curl
 - gawk
-- gh
+- [gh](https://cli.github.com/)
+  - Github CLI
+  - ![Github CLI Example Usage](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/gh.png)
 - git
 - make
 - tmux
@@ -49,11 +77,11 @@ Outlined below are various features this bootstrapping process offers. This is n
 
 ## Docker
 
-docker
-
-docker-compose
+This script will install docker and add the current user to the docker group. It also installs docker-compose v1 and docker compose v2.
 
 ## ASDF
+
+The following is a list of tools installed using [asdf-vm](https://asdf-vm.com/):
 
 - awscli
 - bat
@@ -78,12 +106,6 @@ docker-compose
 - sops
 - terraform
 - tilt
-
-## Shell
-
-starship
-
-fish
 
 ## Dotfiles
 
