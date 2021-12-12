@@ -74,9 +74,9 @@ Accept first suggested word - <kbd>Alt</kbd>+<kbd>F</kbd>
 
 Abbreviations:
 
-- k = kubectl
-- ka = kubectl get all -A
-- tl = tree | less
+- `k` = kubectl
+- `ka` = kubectl get all -A
+- `tl` = tree | less
 
 ## Packages
 
@@ -129,7 +129,7 @@ The following is a list of tools installed using [asdf-vm](https://asdf-vm.com/)
 
 Delta Example:
 
-Syntax highlighting pager for git, diff, and grep output.
+Syntax highlighting pager for `git`, `diff`, and `grep` output.
 
 ![Delta Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/delta.png)
 
@@ -163,11 +163,11 @@ User-friendly HTTP CLI.
 
 The following dotfiles will be installed/updated:
 
-- .bashrc
-- .czrc
-- .tmux.conf
-- config.fish
-- starship.toml
+- `.bashrc`
+- `.czrc`
+- `.tmux.conf`
+- `config.fish`
+- `starship.toml`
 
 ## Tmux
 
