@@ -13,18 +13,6 @@ if test ! -L ~/.config/fish/completions/asdf.fish
   ln -s ~/.asdf/completions/asdf.fish ~/.config/fish/completions
 end
 
-if test ! -d ~/.local/bin
-  mkdir -p ~/.local/bin
-end
-
-if test ! -L /usr/local/sbin/fd
-  sudo ln -s /usr/bin/fdfind /usr/local/sbin/fd
-end
-
-if test ! -L /usr/local/sbin/bat
-  sudo ln -s /usr/bin/batcat /usr/local/sbin/bat
-end
-
 if test ! -f ~/.config/fish/functions/fisher.fish
   curl -sL https://git.io/fisher | source && \
   fisher install jorgebucaran/fisher

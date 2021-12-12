@@ -29,6 +29,14 @@ then
     asdf global ansible-base 2.10.15
 fi
 
+if ! which bpytop > /dev/null
+then
+    printf "\n##### Installing bpytop #####\n\n"
+    asdf plugin add bpytop https://github.com/amrox/asdf-pyapp.git > /dev/null || true
+    asdf install bpytop latest
+    asdf global bpytop latest
+fi
+
 if ! which aws > /dev/null
 then
     printf "\n##### Installing AWS CLI #####\n\n"
@@ -102,8 +110,8 @@ if ! which poetry > /dev/null
 then
     printf "\n##### Installing Poerty #####\n\n"
     asdf plugin-add poetry https://github.com/asdf-community/asdf-poetry.git > /dev/null || true
-    asdf install poetry 1.1.11
-    asdf global poetry 1.1.11
+    asdf install poetry latest
+    asdf global poetry latest
 fi
 
 if ! which pulumi > /dev/null
@@ -126,8 +134,8 @@ if ! which tilt > /dev/null
 then
     printf "\n##### Installing Tilt #####\n\n"
     asdf plugin add tilt > /dev/null || true
-    asdf install tilt 0.22.14
-    asdf global tilt 0.22.14
+    asdf install tilt latest
+    asdf global tilt latest
 fi
 
 if ! which node > /dev/null
@@ -148,6 +156,38 @@ if ! which delta > /dev/null
 then
     printf "\n##### Installing Delta #####\n\n"
     asdf plugin add delta https://github.com/andweeb/asdf-delta.git > /dev/null || true
-    asdf install delta 0.11.0
-    asdf global delta 0.11.0
+    asdf install delta latest
+    asdf global delta latest
+fi
+
+if ! which bat > /dev/null
+then
+    printf "\n##### Installing bat #####\n\n"
+    asdf plugin add bat > /dev/null || true
+    asdf install bat latest
+    asdf global bat latest
+fi
+
+if ! which fzf > /dev/null
+then
+    printf "\n##### Installing fzf #####\n\n"
+    asdf plugin add fzf > /dev/null || true
+    asdf install fzf latest
+    asdf global fzf latest
+fi
+
+if ! which fd > /dev/null
+then
+    printf "\n##### Installing fd #####\n\n"
+    asdf plugin add fd > /dev/null || true
+    asdf install fd latest
+    asdf global fd latest
+fi
+
+if ! which ht > /dev/null
+then
+    printf "\n##### Installing httpie-go #####\n\n"
+    asdf plugin add httpie-go > /dev/null || true
+    asdf install httpie-go latest
+    asdf global httpie-go latest
 fi
