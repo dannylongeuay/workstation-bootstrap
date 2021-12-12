@@ -40,25 +40,25 @@ Outlined below are various features this bootstrapping process offers. This is n
 
 [fish](https://fishshell.com/) is set as the default shell and [starship](https://starship.rs/) is used for the prompt.
 
-Starship Clean Prompt:
+**Starship Clean Prompt:**
 
 ![Starship Clean Prompt Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/starship_clean.png)
 
-Starship Untracked Prompt:
+**Starship Untracked Prompt:**
 
 ![Starship Untracked Prompt Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/starship_untracked.png)
 
-Starship Tracked Prompt:
+**Starship Tracked Prompt:**
 
 ![Starship Tracked Prompt Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/starship_tracked.png)
 
-The following fish plugins are installed:
+**The following fish plugins are installed:**
 
 - [jorgebucaran/fisher](https://github.com/jorgebucaran/fisher)
 - [PatrickF1/fzf.fish](https://github.com/PatrickF1/fzf.fish)
 - [evanlucas/fish-kubectl-completions](https://github.com/evanlucas/fish-kubectl-completions)
 
-Hotkeys:
+**Hotkeys:**
 
 Find files - <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F</kbd>
 
@@ -72,7 +72,7 @@ Accept entire autosuggestion - <kbd>Ctrl</kbd>+<kbd>F</kbd>
 
 Accept first suggested word - <kbd>Alt</kbd>+<kbd>F</kbd>
 
-Abbreviations:
+**Abbreviations:**
 
 - `k` = kubectl
 - `ka` = kubectl get all -A
@@ -91,7 +91,7 @@ Noteworthy packages installed using aptitude:
 - tree
 - vim
 
-Github CLI:
+**Github CLI:**
 
 ![Github CLI Example Usage](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/gh.png)
 
@@ -127,13 +127,13 @@ The following is a list of tools installed using [asdf-vm](https://asdf-vm.com/)
 - [terraform](https://www.terraform.io/)
 - [tilt](https://tilt.dev/)
 
-Delta Example:
+**Delta Example:**
 
 Syntax highlighting pager for `git`, `diff`, and `grep` output.
 
 ![Delta Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/delta.png)
 
-Commitizen Examples:
+**Commitizen Examples:**
 
 Use `cz` instead of `git commit`.
 
@@ -141,19 +141,19 @@ Use `cz` instead of `git commit`.
 
 ![CZ Commit Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/cz_commit.png)
 
-Bat Example:
+**Bat Example:**
 
 `cat` clone with syntax highlighting
 
 ![Bat Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/bat.png)
 
-Bpytop Example:
+**Bpytop Example:**
 
 Resource monitor
 
 ![Bpytop Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/bpytop.png)
 
-Httpie Example:
+**Httpie Example:**
 
 User-friendly HTTP CLI.
 
@@ -171,7 +171,7 @@ The following dotfiles will be installed/updated:
 
 ## Tmux
 
-Hotkeys (vim-like navigation):
+**Hotkeys (vim-like navigation):**
 
 Prefix - <kbd>Ctrl</kbd>+<kbd>g</kbd>
 
@@ -189,13 +189,13 @@ Select up pane - <kbd>k</kbd>
 
 Select right pane - <kbd>l</kbd>
 
-Tmux Multipane:
+**Tmux Multipane:**
 
 Synchronize panes - <kbd>Ctrl</kbd>+<kbd>s</kbd>
 
 ![Tmux Multipane Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/tmux_multipane.png)
 
-Tmux plugins:
+**Tmux plugins:**
 
 - [tmux-power](https://github.com/wfxr/tmux-power)
 - [tmux-net-speed](https://github.com/wfxr/tmux-net-speed)
@@ -203,7 +203,7 @@ Tmux plugins:
 
 ## Git
 
-Fish abbreviations:
+**Fish abbreviations:**
 
 - `g` = git
 - `gs` = git status
@@ -221,3 +221,5 @@ The following fonts are installed from [Nerd Fonts](https://github.com/ryanoasis
 
 - Droid Sans Mono
 - DejaVu Sans Mono
+
+> Use of patched fonts are necessary for starship and tmux to render icons correctly.
