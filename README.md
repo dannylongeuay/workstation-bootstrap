@@ -143,7 +143,7 @@ Use `cz` instead of `git commit`.
 
 Bat Example:
 
-cat clone with syntax highlighting
+`cat` clone with syntax highlighting
 
 ![Bat Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/bat.png)
 
@@ -205,14 +205,15 @@ Tmux plugins:
 
 Fish abbreviations:
 
-- g = git
-- gs = git status
-- gc = git commit -m
-- gpl = git pull
-- gpu = git push
-- gd = git diff HEAD
-- gl = git log --oneline
-- ga = git add -A
+- `g` = git
+- `gs` = git status
+- `gc` = git checkout
+- `gcb` = git checkout -b
+- `gpl` = git pull
+- `gpu` = git push
+- `gd` = git diff HEAD
+- `gl` = git log --oneline
+- `ga` = git add -A
 
 ## Fonts
 
