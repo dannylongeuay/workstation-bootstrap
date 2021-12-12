@@ -137,9 +137,9 @@ Commitizen Examples:
 
 Use `cz` instead of `git commit`.
 
-![CZ Commit Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/cz_commit.png)
-
 ![CZ Emoji Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/cz_emoji.png)
+
+![CZ Commit Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/cz_commit.png)
 
 Bat Example:
 
