@@ -1,7 +1,6 @@
 [aws]
 disabled = true
 
-
 [custom.aws]
 style = "bold blue"
 symbol = "☁️ "

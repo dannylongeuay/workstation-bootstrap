@@ -15,6 +15,7 @@ This repo contains scripts that I used to bootstrap/update my personal and profr
   - [Tmux](#tmux)
   - [Git](#git)
   - [Fonts](#fonts)
+- [Motivation](#motivation)
 
 ## Disclaimer
 
@@ -223,3 +224,9 @@ The following fonts are installed from [Nerd Fonts](https://github.com/ryanoasis
 - DejaVu Sans Mono
 
 > Use of patched fonts are necessary for starship and tmux to render icons correctly.
+
+# Motivation
+
+Create a reliable way to bootstrap a developer workstation. Level-up the development environment with a modern shell and toolset.
+
+Support managing cloud resoures, AWS and DigitalOcean, with infrastructure as code, Terraform and Pulumi. Package, develop, and deploy apps with kubectl, kubeseal, helm, k3d, and tilt. Build services with python, golang, and javascript/typescript.
