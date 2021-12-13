@@ -99,6 +99,14 @@ then
     asdf global k3d 5.0.1
 fi
 
+if ! which k9s > /dev/null
+then
+    printf "\n##### Installing k9s #####\n\n"
+    asdf plugin-add k9s > /dev/null || true
+    asdf install k9s latest
+    asdf global k9s latest
+fi
+
 if ! which kubectl > /dev/null
 then
     printf "\n##### Installing Kubernetes CLI #####\n\n"
