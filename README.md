@@ -114,6 +114,7 @@ The following is a list of tools installed using [asdf-vm](https://asdf-vm.com/)
 - [helm](https://helm.sh/)
 - [httpie-go](https://github.com/nojima/httpie-go)
 - [k3d](https://k3d.io)
+- [k9s](https://github.com/derailed/k9s)
 - [kubectl](https://kubernetes.io/docs/tasks/tools/)
 - [kubeseal](https://github.com/bitnami-labs/sealed-secrets)
 - [node](https://nodejs.org/en/)
@@ -128,20 +129,6 @@ The following is a list of tools installed using [asdf-vm](https://asdf-vm.com/)
 - [terraform](https://www.terraform.io/)
 - [tilt](https://tilt.dev/)
 
-**Delta Example:**
-
-Syntax highlighting pager for `git`, `diff`, and `grep` output.
-
-![Delta Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/delta.png)
-
-**Commitizen Examples:**
-
-Use `cz` instead of `git commit`.
-
-![CZ Emoji Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/cz_emoji.png)
-
-![CZ Commit Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/cz_commit.png)
-
 **Bat Example:**
 
 `cat` clone with syntax highlighting
@@ -154,11 +141,31 @@ Resource monitor
 
 ![Bpytop Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/bpytop.png)
 
+**Commitizen Examples:**
+
+Conventional commits with git emojis. Use `cz` instead of `git commit`.
+
+![CZ Emoji Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/cz_emoji.png)
+
+![CZ Commit Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/cz_commit.png)
+
+**Delta Example:**
+
+Syntax highlighting pager for `git`, `diff`, and `grep` output.
+
+![Delta Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/delta.png)
+
 **Httpie Example:**
 
 User-friendly HTTP CLI.
 
 ![Httpie Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/ht.png)
+
+**K9S Example:**
+
+Terminal UI to interact with kubernetes cluster.
+
+![K9S Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/k9s.png)
 
 ## Dotfiles
 
