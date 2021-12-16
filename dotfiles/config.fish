@@ -12,6 +12,8 @@ if status is-interactive
     abbr --add --global gd git diff HEAD
     abbr --add --global gl "git log --oneline"
     abbr --add --global ga git add -A
+    abbr --add --global gb git branch
+    abbr --add --global gbd git branch -d
     abbr --add --global g git
     abbr --add --global ka kubectl get all -A
     abbr --add --global k kubectl
