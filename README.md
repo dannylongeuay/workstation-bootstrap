@@ -78,6 +78,7 @@ Accept first suggested word - <kbd>Alt</kbd>+<kbd>F</kbd>
 - `k` = kubectl
 - `ka` = kubectl get all -A
 - `tl` = tree | less
+- `xc` = xclip -selection clipboard
 
 ## Packages
 

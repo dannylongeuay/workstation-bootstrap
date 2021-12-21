@@ -18,6 +18,7 @@ if status is-interactive
     abbr --add --global ka kubectl get all -A
     abbr --add --global k kubectl
     abbr --add --global tl "tree | less"
+    abbr --add --global xc "xclip -selection clipboard"
 end
 
 function show-path
