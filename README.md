@@ -91,6 +91,7 @@ Noteworthy packages installed using aptitude:
 - tmux
 - tree
 - vim
+- xclip
 
 **Github CLI:**
 
@@ -214,14 +215,16 @@ Synchronize panes - <kbd>Ctrl</kbd>+<kbd>s</kbd>
 **Fish abbreviations:**
 
 - `g` = git
-- `gs` = git status
+- `ga` = git add -A
+- `gb` = git branch
+- `gbd` = git branch -d
 - `gc` = git checkout
 - `gcb` = git checkout -b
-- `gpl` = git pull
-- `gpu` = git push
 - `gd` = git diff HEAD
 - `gl` = git log --oneline
-- `ga` = git add -A
+- `gpl` = git pull
+- `gpu` = git push
+- `gs` = git status
 
 ## Fonts
 
