@@ -46,6 +46,22 @@ then
     asdf global doctl 1.65.0
 fi
 
+if ! which duf > /dev/null
+then
+    printf "\n##### Installing duf #####\n\n"
+    asdf plugin add duf > /dev/null || true
+    asdf install duf latest
+    asdf global duf latest
+fi
+
+if ! which exa > /dev/null
+then
+    printf "\n##### Installing exa #####\n\n"
+    asdf plugin add exa > /dev/null || true
+    asdf install exa latest
+    asdf global exa latest
+fi
+
 if ! which fd > /dev/null
 then
     printf "\n##### Installing fd #####\n\n"
@@ -135,6 +151,11 @@ if ! which cz > /dev/null
 then
     npm install -g commitizen
     npm install -g cz-emoji
+fi
+
+if ! which fx > /dev/null
+then
+    npm install -g fx
 fi
 
 if ! which poetry > /dev/null
