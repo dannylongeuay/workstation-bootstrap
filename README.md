@@ -110,6 +110,8 @@ The following is a list of tools installed using [asdf-vm](https://asdf-vm.com/)
 - [bat](https://github.com/sharkdp/bat)
 - [delta](https://github.com/dandavison/delta)
 - [doctl](https://github.com/digitalocean/doctl)
+- [duf](https://github.com/muesli/duf)
+- [exa](https://the.exa.website)
 - [fd](https://github.com/sharkdp/fd)
 - [fzf](https://github.com/junegunn/fzf)
 - [go](https://go.dev/)
@@ -122,6 +124,7 @@ The following is a list of tools installed using [asdf-vm](https://asdf-vm.com/)
 - [node](https://nodejs.org/en/)
   - [commitizen](https://github.com/commitizen/cz-cli)
   - [cz-emoji](https://github.com/ngryman/cz-emoji)
+  - [fx](https://github.com/antonmedv/fx)
 - [poetry](https://python-poetry.org/)
 - [pulumi](https://www.pulumi.com/)
 - [python](https://www.python.org/)
@@ -156,6 +159,24 @@ Conventional commits with git emojis. Use `cz` instead of `git commit`.
 Syntax highlighting pager for `git`, `diff`, and `grep` output.
 
 ![Delta Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/delta.png)
+
+**Duf Example:**
+
+Disk usage utility.
+
+![Duf Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/duf.png)
+
+**Exa Example:**
+
+Modern replacement for `ls`.
+
+![Exa Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/exa.png)
+
+**Fx Example:**
+
+JSON processing tool.
+
+![Fx Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/fx.png)
 
 **Httpie Example:**
 
