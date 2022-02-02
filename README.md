@@ -240,11 +240,14 @@ Synchronize panes - <kbd>Ctrl</kbd>+<kbd>s</kbd>
 - `ga` = git add -A
 - `gb` = git branch
 - `gbd` = git branch -d
+- `gbD` = git branch -D
 - `gc` = git checkout
 - `gcb` = git checkout -b
 - `gd` = git diff HEAD
 - `gl` = git log --oneline
 - `gpl` = git pull
+- `gm` = git merge
+- `gmc` = git merge --continue
 - `gpu` = git push
 - `gs` = git status
 
