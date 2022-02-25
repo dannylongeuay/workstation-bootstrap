@@ -86,6 +86,13 @@ then
     asdf global golang 1.17.2
 fi
 
+if ! which swag > /dev/null
+then
+    mkdir -p $HOME/.local/bin
+    export GOBIN=$HOME/.local/bin
+    go install github.com/swaggo/swag/cmd/swag@latest
+fi
+
 if ! which helm > /dev/null
 then
     printf "\n##### Installing Helm #####\n\n"

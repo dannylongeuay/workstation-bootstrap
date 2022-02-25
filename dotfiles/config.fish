@@ -22,6 +22,7 @@ if status is-interactive
     abbr --add --global k kubectl
     abbr --add --global tl "tree | less"
     abbr --add --global xc "xclip -selection clipboard"
+    fish_add_path $HOME/.local/bin
 end
 
 function show-path
