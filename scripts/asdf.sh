@@ -86,11 +86,17 @@ then
     asdf global golang 1.17.2
 fi
 
+mkdir -p $HOME/.local/bin
+export GOBIN=$HOME/.local/bin
+
 if ! which swag > /dev/null
 then
-    mkdir -p $HOME/.local/bin
-    export GOBIN=$HOME/.local/bin
     go install github.com/swaggo/swag/cmd/swag@latest
+fi
+
+if ! which golangci-lint > /dev/null
+then
+    go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 fi
 
 if ! which helm > /dev/null
