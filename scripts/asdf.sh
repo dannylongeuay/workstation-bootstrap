@@ -234,3 +234,21 @@ then
     asdf install tilt latest
     asdf global tilt latest
 fi
+
+if ! which cargo > /dev/null
+then
+    printf "\n##### Installing Rust #####\n\n"
+    asdf plugin add rust > /dev/null || true
+    asdf install rust latest
+    asdf global rust latest
+fi
+
+if [ ! -d ~/.cargo ]
+then
+  mkdir -p ~/.cargo
+fi
+
+if ! which stylua > /dev/null
+then
+    cargo install --root ~/.cargo stylua
+fi

@@ -77,6 +77,7 @@ Accept first suggested word - <kbd>Alt</kbd>+<kbd>F</kbd>
 
 - `k` = kubectl
 - `ka` = kubectl get all -A
+- `nv` = nvim
 - `tl` = tree | less
 - `xc` = xclip -selection clipboard
 
@@ -89,6 +90,8 @@ Noteworthy packages installed using aptitude:
 - [gh](https://cli.github.com/)
 - git
 - make
+- neovim
+- ripgrep
 - tmux
 - tree
 - vim
@@ -220,6 +223,14 @@ Select up pane - <kbd>k</kbd>
 
 Select right pane - <kbd>l</kbd>
 
+Select prev window - <kbd>Ctrl</kbd>-<kbd>h</kbd>
+
+Select next window - <kbd>Ctrl</kbd>+<kbd>l</kbd>
+
+Select window - <kbd>0-9</kbd>
+
+Window interactive index - <kbd>w</kbd>
+
 **Tmux Multipane:**
 
 Synchronize panes - <kbd>Ctrl</kbd>+<kbd>s</kbd>
@@ -231,6 +242,11 @@ Synchronize panes - <kbd>Ctrl</kbd>+<kbd>s</kbd>
 - [tmux-power](https://github.com/wfxr/tmux-power)
 - [tmux-net-speed](https://github.com/wfxr/tmux-net-speed)
 - [tmux-prefix-highlight](https://github.com/tmux-plugins/tmux-prefix-highlight)
+
+**Tmux abbreviations:**
+
+- `tmd` = tmux new -s dev
+- `tma` = tmux a
 
 ## Git
 
