@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "prettier": "^2.5.1",
+    "remark": "^14.0.2",
+    "remark-preset-lint-recommended": "^6.1.2"
+  }
+}

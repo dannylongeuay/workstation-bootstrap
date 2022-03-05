@@ -95,7 +95,8 @@ local mappings = {
 		"Find files",
 	},
 	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-
+	["S"] = { "<cmd>setlocal spell!<CR>", "Spell Check" },
+	["m"] = { "<cmd>MarkdownPreview<CR>", "Markdown Preview" },
 	p = {
 		name = "Packer",
 		c = { "<cmd>PackerCompile<cr>", "Compile" },

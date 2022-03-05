@@ -1,6 +1,5 @@
 local M = {}
 
--- TODO: backfill this to template
 M.setup = function()
 	local signs = {
 		{ name = "DiagnosticSignError", text = "" },
@@ -68,13 +67,6 @@ local function lsp_keymaps(bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(
-		bufnr,
-		"n",
-		"gl",
-		'<cmd>lua vim.diagnostic.open_float(0, { scope = "line", border = "rounded" })<CR>',
-		opts
-	)
 	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 end
 

@@ -1,7 +1,5 @@
 local opts = { noremap = true, silent = true }
 
-local gitnavopts = { noremap = true, silent = true, expr = true }
-
 local keymap = vim.api.nvim_set_keymap
 
 -- Leader --
@@ -26,6 +24,8 @@ keymap("n", "<C-Right>", ":vertical resize +2<cr>", opts)
 keymap("n", "<S-h>", ":bprevious<cr>", opts)
 keymap("n", "<S-l>", ":bnext<cr>", opts)
 
+-- Diagnostics
+keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 -- Visual --
 -- Indent
 keymap("v", "<", "<gv", opts)

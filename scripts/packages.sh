@@ -41,4 +41,4 @@ sudo apt install -y curl fish gawk gh git make tmux tree vim neovim build-essent
 libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget llvm \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev \
 coreutils ca-certificates gnupg lsb-release whois dnsutils dirmngr gpg xclip \
-ripgrep
+ripgrep pandoc

@@ -38,7 +38,6 @@ nvim_tree.setup({
 	hijack_netrw = true,
 	open_on_setup = false,
 	ignore_ft_on_setup = {
-		"startify",
 		"dashboard",
 		"alpha",
 	},
@@ -70,11 +69,11 @@ nvim_tree.setup({
 	},
 	filters = {
 		dotfiles = false,
-		custom = {},
+		custom = { ".git", "node_modules" },
 	},
 	git = {
 		enable = true,
-		ignore = true,
+		ignore = false,
 		timeout = 500,
 	},
 	view = {

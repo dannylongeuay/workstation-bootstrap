@@ -1,6 +1,7 @@
 # Workstation Bootstrap
 
-This repo contains scripts that I used to bootstrap/update my personal and profressional developer workstations.
+This repo contains scripts that I used to bootstrap/update my personal
+and professional developer workstations.
 
 ## Table of Contents
 
@@ -19,7 +20,8 @@ This repo contains scripts that I used to bootstrap/update my personal and profr
 
 ## Disclaimer
 
-This repo has only be tested and used on `Pop!_OS 21.04`. Use at your own risk on other distributions/platforms!
+This repo has only been tested and used on `Pop!_OS 21.04`. Use at your own risk
+on other distributions/platforms!
 
 ## Usage
 
@@ -31,15 +33,18 @@ Clone this repo and run the following top-level script:
 
 Then log out and log back in for the changes to take full affect.
 
-> Log out/log in is necessary for shell and docker group changes. This is only necessary after the first run of this script.
+> Log out/log in is necessary for shell and docker group changes. This is only
+> necessary after the first run of this script.
 
-# Features
+## Features
 
-Outlined below are various features this bootstrapping process offers. This is not an exhaustive list, but rather a highlight reel.
+Outlined below are various features this bootstrapping process offers. This is
+not an exhaustive list, but rather a highlight reel.
 
 ## Shell
 
-[fish](https://fishshell.com/) is set as the default shell and [starship](https://starship.rs/) is used for the prompt.
+The default shell is [fish](https://fishshell.com/) and [starship](https://starship.rs/)
+is used for the prompt.
 
 **Starship Clean Prompt:**
 
@@ -103,7 +108,10 @@ Noteworthy packages installed using aptitude:
 
 ## Docker
 
-This script will install [docker](https://docs.docker.com/engine/install/ubuntu/) and add the current user to the docker group. It also installs [docker-compose](https://docs.docker.com/compose/install/) v1 and [docker compose](https://docs.docker.com/compose/cli-command/) v2.
+This script will install [docker](https://docs.docker.com/engine/install/ubuntu/)
+and add the current user to the docker group.
+It also installs [docker-compose](https://docs.docker.com/compose/install/) v1 and
+[docker compose](https://docs.docker.com/compose/cli-command/) v2.
 
 ## ASDF
 
@@ -276,8 +284,11 @@ The following fonts are installed from [Nerd Fonts](https://github.com/ryanoasis
 
 > Use of patched fonts are necessary for starship and tmux to render icons correctly.
 
-# Motivation
+## Motivation
 
-Create a reliable way to bootstrap a developer workstation. Level-up the development environment with a modern shell and toolset.
+Create a reliable way to bootstrap a developer workstation. Level-up the
+development environment with a modern shell and tool set.
 
-Support managing cloud resoures, AWS and DigitalOcean, with infrastructure as code, Terraform and Pulumi. Package, develop, and deploy apps with kubectl, kubeseal, helm, k3d, and tilt. Build services with python, golang, and javascript/typescript.
+Support managing cloud resources, AWS and DigitalOcean, with infrastructure as code,
+Terraform and Pulumi. Package, develop, and deploy apps with kubectl, kubeseal, helm,
+k3d, and tilt. Build services with python, golang, and javascript/typescript.

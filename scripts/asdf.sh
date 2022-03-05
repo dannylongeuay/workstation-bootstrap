@@ -13,6 +13,13 @@ fi
 
 . $HOME/.asdf/asdf.sh
 
+if ! which ansible > /dev/null
+then
+    printf "\n##### Installing Ansible #####\n\n"
+    asdf plugin add ansible-base https://github.com/amrox/asdf-pyapp.git > /dev/null || true
+    asdf install ansible-base 2.10.15
+    asdf global ansible-base 2.10.15
+fi
 
 if ! which aws > /dev/null
 then
@@ -28,6 +35,33 @@ then
     asdf plugin add bat > /dev/null || true
     asdf install bat latest
     asdf global bat latest
+fi
+
+if ! which bpytop > /dev/null
+then
+    printf "\n##### Installing bpytop #####\n\n"
+    asdf plugin add bpytop https://github.com/amrox/asdf-pyapp.git > /dev/null || true
+    asdf install bpytop latest
+    asdf global bpytop latest
+fi
+
+if ! which cargo > /dev/null
+then
+    printf "\n##### Installing Rust #####\n\n"
+    asdf plugin add rust > /dev/null || true
+    asdf install rust latest
+    asdf global rust latest
+fi
+
+# Rust crates
+if [ ! -d ~/.cargo ]
+then
+  mkdir -p ~/.cargo
+fi
+
+if ! which stylua > /dev/null
+then
+    cargo install --root ~/.cargo stylua
 fi
 
 if ! which delta > /dev/null
@@ -86,6 +120,7 @@ then
     asdf global golang 1.17.2
 fi
 
+# Go binaries
 mkdir -p $HOME/.local/bin
 export GOBIN=$HOME/.local/bin
 
@@ -160,6 +195,7 @@ then
     asdf global nodejs 16.13.0
 fi
 
+# Node global binaries
 if ! which cz > /dev/null
 then
     npm install -g commitizen
@@ -169,6 +205,11 @@ fi
 if ! which fx > /dev/null
 then
     npm install -g fx
+fi
+
+if ! which live-server > /dev/null
+then
+    npm install -g live-server
 fi
 
 if ! which poetry > /dev/null
@@ -195,20 +236,18 @@ then
     asdf global python 3.9.4
 fi
 
-if ! which ansible > /dev/null
+if ! which ruby > /dev/null
 then
-    printf "\n##### Installing Ansible #####\n\n"
-    asdf plugin add ansible-base https://github.com/amrox/asdf-pyapp.git > /dev/null || true
-    asdf install ansible-base 2.10.15
-    asdf global ansible-base 2.10.15
+    printf "\n##### Installing Ruby #####\n\n"
+    asdf plugin-add ruby > /dev/null || true
+    asdf install ruby 3.1.1
+    asdf global ruby 3.1.1
 fi
 
-if ! which bpytop > /dev/null
+# Ruby gems
+if ! which mdl > /dev/null
 then
-    printf "\n##### Installing bpytop #####\n\n"
-    asdf plugin add bpytop https://github.com/amrox/asdf-pyapp.git > /dev/null || true
-    asdf install bpytop latest
-    asdf global bpytop latest
+    gem install mdl
 fi
 
 if ! which sops > /dev/null
@@ -235,20 +274,3 @@ then
     asdf global tilt latest
 fi
 
-if ! which cargo > /dev/null
-then
-    printf "\n##### Installing Rust #####\n\n"
-    asdf plugin add rust > /dev/null || true
-    asdf install rust latest
-    asdf global rust latest
-fi
-
-if [ ! -d ~/.cargo ]
-then
-  mkdir -p ~/.cargo
-fi
-
-if ! which stylua > /dev/null
-then
-    cargo install --root ~/.cargo stylua
-fi
