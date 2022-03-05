@@ -17,5 +17,6 @@ null_ls.setup({
 		diagnostics.flake8,
 		diagnostics.eslint,
 		diagnostics.mdl,
+		diagnostics.golangci_lint,
 	},
 })
