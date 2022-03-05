@@ -14,7 +14,7 @@ local diagnostics = {
 	symbols = { error = " ", warn = " " },
 	colored = false,
 	update_in_insert = false,
-	always_visible = true,
+	always_visible = false,
 }
 
 local diff = {
@@ -51,7 +51,7 @@ lualine.setup({
 		theme = "auto",
 		component_separators = "|",
 		section_separators = { left = "", right = "" },
-		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
+		disabled_filetypes = {},
 		always_divide_middle = true,
 	},
 	sections = {

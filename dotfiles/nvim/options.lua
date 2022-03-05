@@ -1,5 +1,6 @@
 vim.opt.backup = false -- make a backup before overwriting a file
 vim.opt.clipboard = "unnamedplus" -- use clipboard register for all yank, delete, change, and put operations
+-- vim.opt.colorcolumn = "80" -- comma separated list of screen columns that are highlighted
 vim.opt.cursorline = false -- highlight text line containing the cursor
 vim.opt.expandtab = true -- spaces instead of tabs
 vim.opt.fileencoding = "utf-8" -- file content encoding, defaults to UTF-8

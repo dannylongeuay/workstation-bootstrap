@@ -60,6 +60,7 @@ return packer.startup(function(use)
 	use({ "goolord/alpha-nvim", config = 'require("user.alpha")' }) -- customizable greeter
 	use("folke/which-key.nvim") -- keybindings popup
 	use("davidgranstrom/nvim-markdown-preview") --async markdown previewer
+	use("ahmedkhalf/project.nvim") -- project management
 
 	-- themes
 	use("lunarvim/darkplus.nvim") -- VSCode-like colorscheme
