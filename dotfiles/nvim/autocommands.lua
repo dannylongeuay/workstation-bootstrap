@@ -11,6 +11,11 @@ vim.cmd([[
     autocmd FileType markdown setlocal spell
   augroup end
 
+  augroup _qf
+    autocmd!
+    autocmd FileType qf setlocal wrap
+  augroup end
+
   augroup _autoformat
     autocmd!
     autocmd BufWritePre * :silent lua vim.lsp.buf.formatting_sync({}, 1000)

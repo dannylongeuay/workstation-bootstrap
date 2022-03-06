@@ -29,7 +29,12 @@ keymap("n", "gc", "<CMD>lua require('Comment.api').toggle_current_linewise()<CR>
 keymap("n", "gb", "<CMD>lua require('Comment.api').toggle_current_blockwise()<CR>", opts)
 
 -- Diagnostics
+keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+
+-- Git
+keymap("n", "]g", "<cmd>lua require 'gitsigns'.next_hunk()<cr>", opts)
+keymap("n", "[g", "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", opts)
 
 --[[ Visual ]]
 -- Continuous Indent
