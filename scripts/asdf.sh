@@ -236,20 +236,6 @@ then
     asdf global python 3.9.4
 fi
 
-if ! which ruby > /dev/null
-then
-    printf "\n##### Installing Ruby #####\n\n"
-    asdf plugin-add ruby > /dev/null || true
-    asdf install ruby 3.1.1
-    asdf global ruby 3.1.1
-fi
-
-# Ruby gems
-if ! which mdl > /dev/null
-then
-    gem install mdl
-fi
-
 if ! which sops > /dev/null
 then
     printf "\n##### Installing SOPS #####\n\n"
