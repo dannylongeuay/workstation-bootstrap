@@ -26,8 +26,9 @@ keymap("n", "<S-l>", ":bnext<cr>", opts)
 
 -- Diagnostics
 keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+
 -- Visual --
--- Indent
+-- Continuous Indent
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 

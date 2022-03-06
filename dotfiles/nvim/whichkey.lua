@@ -5,8 +5,8 @@ end
 
 local setup = {
 	plugins = {
-		marks = true, -- shows a list of your marks on ' and `
-		registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
+		marks = false, -- shows a list of your marks on ' and `
+		registers = false, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
 		spelling = {
 			enabled = true, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
 			suggestions = 20, -- how many suggestions should be shown in the list?
@@ -20,7 +20,7 @@ local setup = {
 			windows = true, -- default bindings on <c-w>
 			nav = true, -- misc bindings to work with windows
 			z = true, -- bindings for folds, spelling and others prefixed with z
-			g = true, -- bindings for prefixed with g
+			g = false, -- bindings for prefixed with g
 		},
 	},
 	-- add operators that will trigger motion and text object completion
@@ -79,7 +79,6 @@ local opts = {
 }
 
 local mappings = {
-	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
 	["b"] = {
 		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 		"Buffers",
@@ -87,7 +86,6 @@ local mappings = {
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["w"] = { "<cmd>w!<CR>", "Save" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
-	["/"] = { "<cmd>lua require('Comment').toggle()<CR>", "Comment" },
 	["c"] = { "<cmd>Bdelete! %d<CR>", "Close Buffer" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	["f"] = {
@@ -97,7 +95,6 @@ local mappings = {
 	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 	["S"] = { "<cmd>setlocal spell!<CR>", "Spell Check" },
 	["m"] = { "<cmd>MarkdownPreview<CR>", "Markdown Preview" },
-	["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 	p = {
 		name = "Packer",
 		c = { "<cmd>PackerCompile<cr>", "Compile" },
@@ -106,8 +103,12 @@ local mappings = {
 		S = { "<cmd>PackerStatus<cr>", "Status" },
 		u = { "<cmd>PackerUpdate<cr>", "Update" },
 	},
-
 	g = {
+		name = "Comment",
+		c = { "<CMD>lua require('Comment.api').toggle_current_linewise()<CR>", "Line" },
+		b = { "<CMD>lua require('Comment.api').toggle_current_blockwise()<CR>", "Block" },
+	},
+	G = {
 		name = "Git",
 		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
@@ -162,8 +163,6 @@ local mappings = {
 	},
 	s = {
 		name = "Search",
-		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-		c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
 		h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
 		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
 		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
@@ -190,8 +189,13 @@ local vopts = {
 	noremap = true, -- use `noremap` when creating keymaps
 	nowait = true, -- use `nowait` when creating keymaps
 }
+
 local vmappings = {
-	["/"] = { "<ESC><CMD>lua require('Comment.api').gc(vim.fn.visualmode())<CR>", "Comment" },
+	g = {
+		name = "Comment",
+		c = { "<ESC><CMD>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>", "Line" },
+		b = { "<ESC><CMD>lua require('Comment.api').toggle_blockwise_op(vim.fn.visualmode())<CR>", "Block" },
+	},
 }
 
 which_key.setup(setup)

@@ -20,15 +20,16 @@ printf "Install starship.toml\n"
 if [ ! -d ~/.config/nvim ]
 then
   mkdir -p ~/.config/nvim/lua/user
-# else
-#   rm -rf ~/.config/nvim.bak
-#   mv ~/.config/nvim ~/.config/nvim.bak
-#   printf "Backup neovim config\n"
-#   mkdir -p ~/.config/nvim/lua/user
+else
+  rm -rf ~/.config/nvim.bak
+  mv ~/.config/nvim ~/.config/nvim.bak
+  printf "Backup neovim config\n"
+  mkdir -p ~/.config/nvim/lua/user
 fi
 
 cp dotfiles/init.lua ~/.config/nvim/init.lua
 cp -r dotfiles/nvim/* ~/.config/nvim/lua/user/
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 printf "Install neovim config\n"
 
 if [ ! -d ~/.config/alacritty ]
