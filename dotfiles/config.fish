@@ -2,7 +2,7 @@ if status is-interactive
     starship init fish | source
     source ~/.asdf/asdf.fish
     doctl completion fish | source
-    export EDITOR=vim
+    export EDITOR=nvim
     alias daws='docker run --rm -it -v ~/.aws:/root/.aws -v (pwd):/aws -e AWS_PROFILE amazon/aws-cli'
     abbr --add --global ga git add -A
     abbr --add --global gb git branch
@@ -52,4 +52,9 @@ function kconf
     else
         echo "Specifiy the cluster name! i.e. 'kconf infra-prod-usw2-a'"
     end
+end
+
+function fish_title
+    set -q argv[1]; or set argv fish
+    echo (basename (prompt_pwd)) \| $argv;
 end
