@@ -61,7 +61,7 @@ return packer.startup(function(use)
 	use({ "goolord/alpha-nvim", config = 'require("user.alpha")' }) -- customizable greeter
 	use("folke/which-key.nvim") -- keybindings popup
 	use("davidgranstrom/nvim-markdown-preview") --async markdown previewer
-	use("ahmedkhalf/project.nvim") -- project management
+	-- use("ahmedkhalf/project.nvim") -- project management
 	use("karb94/neoscroll.nvim") -- smooth scrolling
 	use("ggandor/lightspeed.nvim") -- motion plugin
 
