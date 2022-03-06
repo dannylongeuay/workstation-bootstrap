@@ -3,7 +3,6 @@ local fn = vim.fn
 -- Automatically install packer
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
-
 if fn.empty(fn.glob(install_path)) > 0 then
 	PACKER_BOOTSTRAP = fn.system({
 		"git",
@@ -63,6 +62,8 @@ return packer.startup(function(use)
 	use("folke/which-key.nvim") -- keybindings popup
 	use("davidgranstrom/nvim-markdown-preview") --async markdown previewer
 	use("ahmedkhalf/project.nvim") -- project management
+	use("karb94/neoscroll.nvim") -- smooth scrolling
+	use("ggandor/lightspeed.nvim") -- motion plugin
 
 	-- themes
 	use("lunarvim/darkplus.nvim") -- VSCode-like colorscheme
@@ -102,6 +103,9 @@ return packer.startup(function(use)
 
 	-- code quality
 	use("jose-elias-alvarez/null-ls.nvim") -- linting and formatting integration with LSP
+
+	-- performance
+	use("lewis6991/impatient.nvim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

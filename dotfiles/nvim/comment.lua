@@ -8,7 +8,6 @@ comment.setup({
 	padding = true,
 
 	---Whether the cursor should stay at its position
-	---NOTE: This only affects NORMAL mode mappings and doesn't work with dot-repeat
 	sticky = true,
 
 	---Lines to be ignored while comment/uncomment.
@@ -46,7 +45,7 @@ comment.setup({
 	mappings = {
 		---Operator-pending mapping
 		---Includes `gcc`, `gbc`, `gc[count]{motion}` and `gb[count]{motion}`
-		basic = true,
+		basic = false,
 		---Extra mapping
 		---Includes `gco`, `gcO`, `gcA`
 		extra = false,

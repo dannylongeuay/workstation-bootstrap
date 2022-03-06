@@ -7,7 +7,7 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Normal --
+--[[ Normal ]]
 -- Window nav
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -24,13 +24,21 @@ keymap("n", "<C-Right>", ":vertical resize -2<cr>", opts)
 keymap("n", "<S-h>", ":bprevious<cr>", opts)
 keymap("n", "<S-l>", ":bnext<cr>", opts)
 
+-- Comments
+keymap("n", "gc", "<CMD>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
+keymap("n", "gb", "<CMD>lua require('Comment.api').toggle_current_blockwise()<CR>", opts)
+
 -- Diagnostics
 keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 
--- Visual --
+--[[ Visual ]]
 -- Continuous Indent
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Persist paste register
 keymap("v", "p", '"_dP', opts)
+
+-- Comments
+keymap("v", "gc", "<ESC><CMD>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>", opts)
+keymap("v", "gb", "<ESC><CMD>lua require('Comment.api').toggle_blockwise_op(vim.fn.visualmode())<CR>", opts)
