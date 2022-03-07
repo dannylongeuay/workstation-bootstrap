@@ -38,6 +38,10 @@ keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 keymap("n", "]g", "<cmd>lua require 'gitsigns'.next_hunk()<cr>", opts)
 keymap("n", "[g", "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", opts)
 
+-- Quickfix
+keymap("n", "]q", "<cmd>QNext<CR>", opts)
+keymap("n", "[q", "<cmd>QPrev<CR>", opts)
+
 --[[ Visual ]]
 -- Continuous Indent
 keymap("v", "<", "<gv", opts)

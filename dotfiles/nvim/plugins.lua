@@ -65,6 +65,7 @@ return packer.startup(function(use)
 	use("karb94/neoscroll.nvim") -- smooth scrolling
 	use("ggandor/lightspeed.nvim") -- motion plugin
 	use("Shatur/neovim-session-manager") -- automatic session management
+	use("stevearc/qf_helper.nvim") -- quickfix improvements
 
 	-- themes
 	use("lunarvim/darkplus.nvim") -- VSCode-like colorscheme

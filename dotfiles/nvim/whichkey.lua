@@ -171,6 +171,12 @@ local mappings = {
 		l = { "<cmd>LuaCacheLog<cr>", "View Cache Log" },
 		p = { "<cmd>LuaCacheProfile<cr>", "Profile" },
 	},
+	u = {
+		name = "Quickfix",
+		q = { "<cmd>QFToggle!<CR>", "Toggle Quickfix" },
+		n = { "<cmd>QNext<CR>", "Next" },
+		p = { "<cmd>QPrev<CR>", "Prev" },
+	},
 }
 
 which_key.setup(setup)
