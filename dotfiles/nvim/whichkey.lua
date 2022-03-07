@@ -86,17 +86,22 @@ local mappings = {
 	},
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["w"] = { "<cmd>w!<CR>", "Save" },
+	["W"] = { "<cmd>wa!<CR>", "Save" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
 	["Q"] = { "<cmd>qa!<CR>", "Quit All" },
-	["c"] = { "<cmd>Bdelete! %d<CR>", "Close Buffer" },
+	["c"] = { "<cmd>Bdelete! %d<CR>", "Close Current Buffer" },
+	["C"] = { "<cmd>%bdelete<CR>", "Close All Buffers" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	["f"] = {
 		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 		"Find files",
 	},
 	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-	["S"] = { "<cmd>setlocal spell!<CR>", "Spell Check" },
-	["m"] = { "<cmd>MarkdownPreview<CR>", "Markdown Preview" },
+	t = {
+		name = "Text Utilities",
+		s = { "<cmd>setlocal spell!<CR>", "Spell Check" },
+		m = { "<cmd>MarkdownPreview<CR>", "Markdown Preview" },
+	},
 	p = {
 		name = "Packer",
 		c = { "<cmd>PackerCompile<cr>", "Compile" },
@@ -144,7 +149,15 @@ local mappings = {
 		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 	},
-	t = {
+	S = {
+		name = "Session",
+		s = { "<cmd>SessionManager! load_session<cr>", "Select Session" },
+		l = { "<cmd>SessionManager! load_last_session<cr>", "Load Last Session" },
+		c = { "<cmd>SessionManager! load_current_dir_session<cr>", "Load CWD Session" },
+		S = { "<cmd>SessionManager! save_current_session<cr>", "Save CWD Session" },
+		D = { "<cmd>SessionManager! delete_session<cr>", "Delete Session" },
+	},
+	T = {
 		name = "Terminal",
 		n = { "<cmd>lua _NODE_TOGGLE()<cr>", "node" },
 		p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "python" },

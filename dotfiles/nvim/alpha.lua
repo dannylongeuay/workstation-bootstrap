@@ -17,6 +17,7 @@ dashboard.section.header.val = {
 }
 
 dashboard.section.buttons.val = {
+	dashboard.button("s", "  Load Session", ":SessionManager! load_current_dir_session<CR>"),
 	dashboard.button("e", "  File Explorer", ":NvimTreeOpen<CR>"),
 	dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
 	-- dashboard.button("p", "  Find project", ":Telescope projects <CR>"),

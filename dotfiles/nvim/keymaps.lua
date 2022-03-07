@@ -31,6 +31,8 @@ keymap("n", "gb", "<CMD>lua require('Comment.api').toggle_current_blockwise()<CR
 -- Diagnostics
 keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 
 -- Git
 keymap("n", "]g", "<cmd>lua require 'gitsigns'.next_hunk()<cr>", opts)

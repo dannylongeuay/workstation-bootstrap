@@ -64,6 +64,7 @@ return packer.startup(function(use)
 	-- use("ahmedkhalf/project.nvim") -- project management
 	use("karb94/neoscroll.nvim") -- smooth scrolling
 	use("ggandor/lightspeed.nvim") -- motion plugin
+	use("Shatur/neovim-session-manager") -- automatic session management
 
 	-- themes
 	use("lunarvim/darkplus.nvim") -- VSCode-like colorscheme
@@ -89,6 +90,7 @@ return packer.startup(function(use)
 
 	-- nav
 	use("nvim-telescope/telescope.nvim") -- file fuzzy finder
+	use("nvim-telescope/telescope-ui-select.nvim") -- use telescope picker for neovim selections
 	use("kyazdani42/nvim-tree.lua") -- better file explorer
 	use("akinsho/bufferline.nvim") -- buffer line with minimal tab integration
 
