@@ -29,7 +29,11 @@ fi
 
 cp dotfiles/init.lua ~/.config/nvim/init.lua
 cp -r dotfiles/nvim/* ~/.config/nvim/lua/user/
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+
+if [ -d ~/.local/share/nvim/site/pack/packer/start/packer.nvim ]
+then
+  nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+fi
 printf "Install neovim config\n"
 
 if [ ! -d ~/.config/alacritty ]
