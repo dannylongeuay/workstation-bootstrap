@@ -1,6 +1,7 @@
-local default_schemas = nil
+local default_schemas = {}
 local status_ok, jsonls_settings = pcall(require, "nlspsettings.jsonls")
 if status_ok then
+	-- TODO: does this even work?
 	default_schemas = jsonls_settings.get_default_schemas()
 end
 

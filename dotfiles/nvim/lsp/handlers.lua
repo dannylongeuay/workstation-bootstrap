@@ -63,6 +63,9 @@ M.on_attach = function(client, _)
 	if client.name == "tsserver" then
 		client.resolved_capabilities.document_formatting = false
 	end
+	if client.name == "jsonls" then
+		client.resolved_capabilities.document_formatting = false
+	end
 	lsp_highlight_document(client)
 end
 

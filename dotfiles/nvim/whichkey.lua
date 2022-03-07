@@ -129,6 +129,7 @@ local mappings = {
 		f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
 		i = { "<cmd>LspInfo<cr>", "Info" },
 		I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
+		u = { "<cmd>LspUpdateAll<cr>", "Update Outdated Servers" },
 		j = {
 			"<cmd>lua vim.diagnostic.goto_next()<CR>",
 			"Next Diagnostic",
