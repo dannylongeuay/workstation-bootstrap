@@ -9,6 +9,7 @@ if #uis > 0 then
 	-- Include the servers you want to have installed by default below
 	local servers = {
 		"bashls",
+		"dockerls",
 		"gopls",
 		"jsonls",
 		"ltex",
@@ -16,6 +17,7 @@ if #uis > 0 then
 		"sumneko_lua",
 		"svelte",
 		"tailwindcss",
+		"terraformls",
 		"tsserver",
 		"yamlls",
 	}
