@@ -41,8 +41,28 @@ local location = {
 	padding = 0,
 }
 
-local spaces = function()
-	return "Spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
+local buffer_clients_and_sources = function()
+	local clients_and_sources = {}
+	local clients = vim.lsp.buf_get_clients()
+	for _, client in pairs(clients) do
+		if client.name ~= "null-ls" then
+			table.insert(clients_and_sources, client.name)
+		end
+	end
+	if #clients_and_sources == 0 then
+		table.insert(clients_and_sources, "LS Inactive")
+	end
+	local null_ls_status_ok, null_ls = pcall(require, "null-ls")
+	if null_ls_status_ok then
+		for _, source in pairs(null_ls.get_sources()) do
+			for k, v in pairs(source.filetypes) do
+				if v and vim.bo.filetype == k then
+					table.insert(clients_and_sources, source.name)
+				end
+			end
+		end
+	end
+	return table.concat(clients_and_sources, ", ")
 end
 
 lualine.setup({
@@ -51,14 +71,14 @@ lualine.setup({
 		theme = "auto",
 		component_separators = "|",
 		section_separators = { left = "", right = "" },
-		disabled_filetypes = {},
+		disabled_filetypes = { "NvimTree" },
 		always_divide_middle = true,
 	},
 	sections = {
 		lualine_a = { branch },
 		lualine_b = { diff },
 		lualine_c = { diagnostics },
-		lualine_x = { spaces },
+		lualine_x = { buffer_clients_and_sources },
 		lualine_y = { filetype },
 		lualine_z = { location },
 	},

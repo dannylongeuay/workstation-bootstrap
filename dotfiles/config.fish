@@ -60,7 +60,7 @@ function fish_title
 end
 
 function fish_git_fetch --on-variable PWD
-  if ls -d -- .*/ | grep -q '.git/'
+  if test -d ./.git/
     echo "Fetching origin..."
     git fetch -v
   end
