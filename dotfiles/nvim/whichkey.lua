@@ -80,10 +80,6 @@ local opts = {
 }
 
 local mappings = {
-	["b"] = {
-		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-		"Buffers",
-	},
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["w"] = { "<cmd>w!<CR>", "Save" },
 	["W"] = { "<cmd>wa!<CR>", "Save" },
@@ -91,12 +87,15 @@ local mappings = {
 	["Q"] = { "<cmd>qa!<CR>", "Quit All" },
 	["c"] = { "<cmd>Bdelete! %d<CR>", "Close Current Buffer" },
 	["C"] = { "<cmd>%bdelete<CR>", "Close All Buffers" },
-	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
+	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+	["b"] = {
+		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+		"Buffers",
+	},
 	["f"] = {
 		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 		"Find files",
 	},
-	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 	t = {
 		name = "Text Utilities",
 		s = { "<cmd>setlocal spell!<CR>", "Spell Check" },

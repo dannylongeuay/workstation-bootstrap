@@ -50,14 +50,18 @@ null_ls.setup({
 				return file_contains_pattern("pyproject.toml", "black =")
 			end,
 		}),
-		formatting.prettier,
+		formatting.prettier.with({
+			extra_filetypes = { "svelte" },
+		}),
 		formatting.stylua,
 		formatting.yapf.with({
 			condition = function()
 				return file_contains_pattern("pyproject.toml", "yapf =")
 			end,
 		}),
-		diagnostics.eslint,
+		diagnostics.eslint.with({
+			extra_filetypes = { "svelte" },
+		}),
 		diagnostics.flake8.with({
 			condition = function()
 				return file_contains_pattern("pyproject.toml", "flake8 =")

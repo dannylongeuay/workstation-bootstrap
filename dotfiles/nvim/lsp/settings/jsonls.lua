@@ -3,6 +3,7 @@ if not schema_status_ok then
 	return
 end
 
+-- https://github.com/SchemaStore/schemastore/blob/master/src/api/json/catalog.json
 return {
 	settings = {
 		json = {

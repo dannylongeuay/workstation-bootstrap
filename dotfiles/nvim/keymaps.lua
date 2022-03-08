@@ -29,6 +29,7 @@ keymap("n", "gc", "<CMD>lua require('Comment.api').toggle_current_linewise()<CR>
 keymap("n", "gb", "<CMD>lua require('Comment.api').toggle_current_blockwise()<CR>", opts)
 
 -- Diagnostics
+keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
