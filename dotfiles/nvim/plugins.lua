@@ -87,7 +87,8 @@ return packer.startup(function(use)
 	-- LSP
 	use("neovim/nvim-lspconfig") -- enable LSP
 	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
-	use("tamago324/nlsp-settings.nvim") -- default json schemas
+	use("tamago324/nlsp-settings.nvim") -- LSP server configuration
+	use("b0o/schemastore.nvim") -- json schemastore catalog access
 
 	-- nav
 	use("nvim-telescope/telescope.nvim") -- file fuzzy finder
