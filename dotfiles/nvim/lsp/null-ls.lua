@@ -65,6 +65,7 @@ null_ls.setup({
 		}),
 		diagnostics.golangci_lint,
 		diagnostics.pylint.with({
+			timeout = 20000, -- pylint is slow
 			condition = function()
 				return file_contains_pattern("pyproject.toml", "pylint =")
 			end,
