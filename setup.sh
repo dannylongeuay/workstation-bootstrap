@@ -18,6 +18,9 @@ printf "\n##### Bootstrapping Process Started #####\n"
 # Install asdf
 /bin/bash scripts/asdf.sh
 
+#Install nvim
+/bin/bash scripts/nvim.sh
+
 # Copy dotfiles
 /bin/bash scripts/dotfiles.sh
 

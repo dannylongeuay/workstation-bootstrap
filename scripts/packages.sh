@@ -28,16 +28,10 @@ then
     sudo apt-add-repository -y ppa:fish-shell/release-3
 fi
 
-
-if ! sudo apt-add-repository -L | grep neovim-ppa > /dev/null
-then
-    sudo apt-add-repository -y ppa:neovim-ppa/stable
-fi
-
 # Update and install packages
 sudo apt update > /dev/null
 
-sudo apt install -y curl fish gawk gh git make tmux tree vim neovim build-essential \
+sudo apt install -y curl fish gawk gh git make tmux tree vim build-essential \
 libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget llvm \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev \
 coreutils ca-certificates gnupg lsb-release whois dnsutils dirmngr gpg xclip \

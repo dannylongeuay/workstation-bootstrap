@@ -141,6 +141,8 @@ local mappings = {
 		r = { "<cmd>lua vim.lsp.buf.references()<cr>", "References" },
 		R = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+		n = { "<cmd>NullLsInfo<cr>", "Null LS Info" },
+		t = { "<cmd>TSInstallInfo<cr>", "Tree Sitter Info" },
 	},
 	s = {
 		name = "Search",
