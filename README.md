@@ -96,7 +96,8 @@ Noteworthy packages installed using aptitude:
 - [gh](https://cli.github.com/)
 - git
 - make
-- ripgrep
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [screenkey](https://www.thregr.org/~wavexx/software/screenkey/)
 - tmux
 - tree
 - vim
