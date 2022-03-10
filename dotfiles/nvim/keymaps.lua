@@ -21,8 +21,8 @@ keymap("n", "<C-Left>", ":vertical resize +2<cr>", opts)
 keymap("n", "<C-Right>", ":vertical resize -2<cr>", opts)
 
 -- Buffers
-keymap("n", "<S-h>", ":bprevious<cr>", opts)
-keymap("n", "<S-l>", ":bnext<cr>", opts)
+keymap("n", "<S-h>", ":BufferLineCyclePrev<cr>", opts)
+keymap("n", "<S-l>", ":BufferLineCycleNext<cr>", opts)
 
 -- Comments
 keymap("n", "gc", "<CMD>lua require('Comment.api').toggle_current_linewise()<CR>", opts)

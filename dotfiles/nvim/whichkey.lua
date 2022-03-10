@@ -179,6 +179,17 @@ local mappings = {
 		n = { "<cmd>QNext<CR>", "Next" },
 		p = { "<cmd>QPrev<CR>", "Prev" },
 	},
+	B = {
+		name = "Bufferline",
+		e = { "<cmd>BufferLineSortByExtension<CR>", "Sort By Extension" },
+		d = { "<cmd>BufferLineSortByDirectory<CR>", "Sort By Directory" },
+		n = {
+			"<cmd>lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.filename < buf_b.filename end)<CR>",
+			"Sory By Name",
+		},
+		l = { "<cmd>BufferLineCloseRight<CR>", "Close All Buffers Right" },
+		h = { "<cmd>BufferLineCloseLeft<CR>", "Close All Buffers Left" },
+	},
 }
 
 which_key.setup(setup)
