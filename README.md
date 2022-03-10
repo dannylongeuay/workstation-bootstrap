@@ -289,40 +289,34 @@ The following fonts are installed from [Nerd Fonts](https://github.com/ryanoasis
 
 Heavily modded [Neovim](https://neovim.io/) installation.
 
+![Alpha Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/alpha.png)
+
 ### Custom keybindings
 
 | Category      |             Binding              | Function                         |      Mode      |
 | ------------- | :------------------------------: | -------------------------------- | :------------: |
 | General       |         <kbd>Space</kbd>         | Leader                           |     Normal     |
-|               |                                  |                                  |                |
 | Window Nav    |   <kbd>Ctrl</kbd>+<kbd>h</kbd>   | Move cursor to left window       |     Normal     |
 |               |   <kbd>Ctrl</kbd>+<kbd>j</kbd>   | Move cursor to down window       |     Normal     |
 |               |   <kbd>Ctrl</kbd>+<kbd>k</kbd>   | Move cursor to up window         |     Normal     |
 |               |   <kbd>Ctrl</kbd>+<kbd>l</kbd>   | Move cursor to right window      |     Normal     |
-|               |                                  |                                  |                |
 | Window Resize | <kbd>Ctrl</kbd>+<kbd>Left</kbd>  | Resize window left               |     Normal     |
 |               | <kbd>Ctrl</kbd>+<kbd>Down</kbd>  | Resize window down               |     Normal     |
 |               |  <kbd>Ctrl</kbd>+<kbd>Up</kbd>   | Resize window up                 |     Normal     |
 |               | <kbd>Ctrl</kbd>+<kbd>Right</kbd> | Resize window right              |     Normal     |
-|               |                                  |                                  |                |
 | Buffer Nav    |  <kbd>Shift</kbd>+<kbd>h</kbd>   | Go to previous buffer            |     Normal     |
 |               |  <kbd>Shift</kbd>+<kbd>l</kbd>   | Go to next buffer                |     Normal     |
-|               |                                  |                                  |                |
 | Comments      |     <kbd>g</kbd><kbd>c</kbd>     | Toggle line comment              | Normal, Visual |
 |               |     <kbd>g</kbd><kbd>b</kbd>     | Toggle block comment             | Normal, Visual |
-|               |                                  |                                  |                |
 | Diagnostics   |           <kbd>K</kbd>           | Toggle hover                     |     Normal     |
 |               |     <kbd>g</kbd><kbd>d</kbd>     | Go to definition                 |     Normal     |
 |               |     <kbd>g</kbd><kbd>l</kbd>     | Toggle line diagnostic float     |     Normal     |
 |               |     <kbd>[</kbd><kbd>d</kbd>     | Go to previous diagnostic        |     Normal     |
 |               |     <kbd>]</kbd><kbd>d</kbd>     | Go to next diagnostic            |     Normal     |
-|               |                                  |                                  |                |
 | Git           |     <kbd>[</kbd><kbd>g</kbd>     | Go to previous hunk              |     Normal     |
 |               |     <kbd>]</kbd><kbd>g</kbd>     | Go to next hunk                  |     Normal     |
-|               |                                  |                                  |                |
 | Quickfix      |     <kbd>[</kbd><kbd>q</kbd>     | Go to previous quickfix location |     Normal     |
 |               |     <kbd>]</kbd><kbd>q</kbd>     | Go to next quickfix location     |     Normal     |
-|               |                                  |                                  |                |
 | Terminal      |   <kbd>Ctrl</kbd>+<kbd>\</kbd>   | Toggle terminal                  |     Normal     |
 
 ### Plugins
@@ -339,16 +333,21 @@ Heavily modded [Neovim](https://neovim.io/) installation.
 - [famiu/bufdelete.nvim](https://github.com/famiu/bufdelete.nvim) -- sane bdelete and bwipeout commands
 - [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) -- customizable statusline
 - [akinsho/toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim) -- toggle and persist terminals
-  - ![Toggleterm Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/toggleterm.png)
+
+![Toggleterm Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/toggleterm.png)
+
 - [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) -- indentation line guides
 - [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim) -- customizable greeter
-  - ![Alpha Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/alpha.png)
 - [folke/which-key.nvim](https://github.com/folke/which-key.nvim) -- keybindings popup
-  - ![Which Key Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/whichkey.png)
+
+![Which Key Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/whichkey.png)
+
 - [davidgranstrom/nvim-markdown-preview](https://github.com/davidgranstrom/nvim-markdown-preview) -- async markdown previewer
 - [karb94/neoscroll.nvim](https://github.com/karb94/neoscroll.nvim) -- smooth scrolling
 - [ggandor/lightspeed.nvim](https://github.com/ggandor/lightspeed.nvim) -- motion plugin
-  - ![Lightspeed Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/lightspeed.png)
+
+![Lightspeed Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/lightspeed.png)
+
 - [Shatur/neovim-session-manager](https://github.com/Shatur/neovim-session-manager) -- automatic session management
 - [stevearc/qf_helper.nvim](https://github.com/stevearc/qf_helper.nvim) -- quickfix improvements
 
@@ -360,7 +359,9 @@ Heavily modded [Neovim](https://neovim.io/) installation.
 #### Completion
 
 - [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp) -- completion plugin
-  - ![Completion Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/completion.png)
+
+![Completion Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/completion.png)
+
 - [hrsh7th/cmp-buffer](https://github.com/hrsh7th/cmp-buffer) -- buffer completions
 - [hrsh7th/cmp-path](https://github.com/hrsh7th/cmp-path) -- path completions
 - [hrsh7th/cmp-cmdline](https://github.com/hrsh7th/cmp-cmdline) -- command line completions
@@ -371,32 +372,44 @@ Heavily modded [Neovim](https://neovim.io/) installation.
 
 - [L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip) -- snippet engine
 - [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets) -- a collection of useful snippets
-  - ![Snippets Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/snippets.png)
+
+![Snippets Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/snippets.png)
 
 #### LSP
 
 - [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) -- enable LSP
-  - ![LSP Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/lsp.png)
+
+![LSP Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/lsp.png)
+
 - [williamboman/nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer) -- language server installer
-  - ![LSP Installer Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/lsp_installer.png)
+
+![LSP Installer Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/lsp_installer.png)
+
 - [tamago324/nlsp-settings.nvim](https://github.com/tamago324/nlsp-settings.nvim) -- LSP server configurations
 - [b0o/schemastore.nvim](https://github.com/b0o/schemastore.nvim) -- JSON schemastore catalog access
-  - ![JSON Schema Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/json_schema.png)
+
+![JSON Schema Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/json_schema.png)
 
 #### Navigation
 
 - [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) -- file/text fuzzy finder
-  - ![Telescope file Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/telescope_file.png)
-  - ![Telescope grep Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/telescope_grep.png)
+
+![Telescope file Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/telescope_file.png)
+
+![Telescope grep Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/telescope_grep.png)
+
 - [nvim-telescope/telescope-ui-select.nvim](https://github.com/nvim-telescope/telescope-ui-select.nvim) -- use telescope picker for neovim selections
 - [kyazdani42/nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua) -- file explorer
-  - ![NvimTree Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/nvim_tree.png)
+
+![NvimTree Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/nvim_tree.png)
+
 - [akinsho/bufferline.nvim](https://github.com/akinsho/bufferline.nvim) -- customizable buffer line
 
 #### Syntax
 
 - [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) -- syntax highlighting
-  - ![Syntax Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/syntax.png)
+
+![Syntax Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/syntax.png)
 
 #### Git
 
@@ -405,12 +418,14 @@ Heavily modded [Neovim](https://neovim.io/) installation.
 #### Code Quality
 
 - [jose-elias-alvarez/null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim) -- linting and formatting integration with LSP
-  - ![Code Quality Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/code_quality.png)
+
+![Code Quality Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/code_quality.png)
 
 #### Performance
 
 - [lewis6991/impatient.nvim](https://github.com/lewis6991/impatient.nvim) -- cache plugins
-  - ![Cache Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/cache.png)
+
+![Cache Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/cache.png)
 
 ## Motivation
 
