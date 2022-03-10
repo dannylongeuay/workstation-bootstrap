@@ -134,6 +134,11 @@ then
     go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 fi
 
+if ! which slides > /dev/null
+then
+  go install github.com/maaslalani/slides@latest
+fi
+
 if ! which helm > /dev/null
 then
     printf "\n##### Installing Helm #####\n\n"
