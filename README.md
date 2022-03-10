@@ -96,7 +96,6 @@ Noteworthy packages installed using aptitude:
 - [gh](https://cli.github.com/)
 - git
 - make
-- neovim
 - ripgrep
 - tmux
 - tree
@@ -288,6 +287,14 @@ The following fonts are installed from [Nerd Fonts](https://github.com/ryanoasis
 ## Neovim
 
 Heavily modded [Neovim](https://neovim.io/) installation.
+
+**Abbreviation:**
+
+- `nv` = nvim
+
+> Both Neovim stable and nightly are installed as `nvim-stable` and `nvim-nightly` respectively.
+
+> nvim symlinks to the Neovim nightly appimage
 
 ![Alpha Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/alpha.png)
 
