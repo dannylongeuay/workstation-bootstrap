@@ -1,6 +1,6 @@
 #!/bin/bash
 
-printf "\n##### Installing Nvim #####\n\n"
+printf "\n##### Installing Neovim #####\n\n"
 
 # Install neovim nightly
 if [ ! -f /usr/local/bin/nvim-nightly ]
@@ -21,6 +21,23 @@ fi
 if [ ! -L /usr/local/bin/nvim ]
 then
   sudo ln -s /usr/local/bin/nvim-nightly /usr/local/bin/nvim
-else
-  printf "Neovim is already installed\n"
 fi
+
+if [ ! -d ~/.config/nvim ]
+then
+  mkdir -p ~/.config/nvim
+else
+  rm -rf ~/.config/nvim.bak
+  mv ~/.config/nvim ~/.config/nvim.bak
+  printf "Created Neovim backup config\n"
+  mkdir -p ~/.config/nvim
+fi
+
+cp -r nvim/* ~/.config/nvim
+
+if [ -d ~/.local/share/nvim/site/pack/packer/start/packer.nvim ]
+then
+  nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+fi
+printf "Installed Neovim config\n"
+
