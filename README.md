@@ -211,6 +211,7 @@ The following dotfiles will be installed/updated:
 - `.tmux.conf`
 - `config.fish`
 - `starship.toml`
+- `alacritty.yml`
 
 ## Tmux
 
@@ -283,7 +284,7 @@ The following fonts are installed from [Nerd Fonts](https://github.com/ryanoasis
 - Droid Sans Mono
 - DejaVu Sans Mono
 
-> Use of patched fonts are necessary for starship and tmux to render icons correctly.
+> Use of patched fonts are necessary for the terminal/shell to render dev icons correctly.
 
 ## Neovim
 
