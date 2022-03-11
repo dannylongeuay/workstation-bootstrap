@@ -325,7 +325,7 @@ Heavily modded [Neovim](https://neovim.io/) installation.
 |               |     <kbd>]</kbd><kbd>g</kbd>     | Go to next hunk                  |     Normal     |
 | Quickfix      |     <kbd>[</kbd><kbd>q</kbd>     | Go to previous quickfix location |     Normal     |
 |               |     <kbd>]</kbd><kbd>q</kbd>     | Go to next quickfix location     |     Normal     |
-| Terminal      |   <kbd>Ctrl</kbd>+<kbd>\</kbd>   | Toggle terminal                  |     Normal     |
+| Terminal      |  <kbd>Ctrl</kbd>+<kbd>\\</kbd>   | Toggle terminal                  |     Normal     |
 
 ### Plugins
 
