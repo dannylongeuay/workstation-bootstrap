@@ -190,6 +190,17 @@ local mappings = {
 		l = { "<cmd>BufferLineCloseRight<CR>", "Close All Buffers Right" },
 		h = { "<cmd>BufferLineCloseLeft<CR>", "Close All Buffers Left" },
 	},
+	d = {
+		name = "Debug",
+		b = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", "Toggle Breakpoint" },
+		C = { "<cmd>lua require'dap'.clear_breakpoints()<CR>", "Clear Breakpoints" },
+		q = { "<cmd>lua require'dap'.list_breakpoints()<CR>", "List Breakpoints" },
+		c = { "<cmd>lua require'dap'.continue()<CR>", "Continue" },
+		l = { "<cmd>lua require'dap'.run_last()<CR>", "Run Last" },
+		t = { "<cmd>lua require'dap'.run_to_cursor()<CR>", "Run To Cursor" },
+		r = { "<cmd>lua require'dap'.repl.toggle()<CR>", "Toggle REPL" },
+		T = { "<cmd>lua require'dap'.terminate()<CR>", "Terminate Session" },
+	},
 }
 
 which_key.setup(setup)

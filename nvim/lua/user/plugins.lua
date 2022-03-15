@@ -110,6 +110,10 @@ return packer.startup(function(use)
 	-- performance
 	use("lewis6991/impatient.nvim")
 
+	-- debugging
+	use("mfussenegger/nvim-dap") -- debug adapter protocol cilent
+	use("rcarriga/nvim-dap-ui") -- dap ui extension
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

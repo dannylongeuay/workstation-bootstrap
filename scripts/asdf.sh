@@ -139,6 +139,11 @@ then
   go install github.com/maaslalani/slides@latest
 fi
 
+if ! which dlv > /dev/null
+then
+  go install github.com/go-delve/delve/cmd/dlv@latest
+fi
+
 if ! which helm > /dev/null
 then
     printf "\n##### Installing Helm #####\n\n"

@@ -17,8 +17,8 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 -- Resize
 keymap("n", "<C-Up>", ":resize +2<cr>", opts)
 keymap("n", "<C-Down>", ":resize -2<cr>", opts)
-keymap("n", "<C-Left>", ":vertical resize +2<cr>", opts)
-keymap("n", "<C-Right>", ":vertical resize -2<cr>", opts)
+keymap("n", "<C-Right>", ":vertical resize +2<cr>", opts)
+keymap("n", "<C-Left>", ":vertical resize -2<cr>", opts)
 
 -- Buffers
 keymap("n", "<S-h>", ":BufferLineCyclePrev<cr>", opts)
@@ -42,6 +42,12 @@ keymap("n", "[g", "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", opts)
 -- Quickfix
 keymap("n", "]q", "<cmd>QNext<CR>", opts)
 keymap("n", "[q", "<cmd>QPrev<CR>", opts)
+
+-- Debug
+keymap("n", "[c", "<cmd>lua require'dap'.step_back()<CR>", opts)
+keymap("n", "]c", "<cmd>lua require'dap'.step_over()<CR>", opts)
+keymap("n", "gi", "<cmd>lua require'dap'.step_into()<CR>", opts)
+keymap("n", "go", "<cmd>lua require'dap'.step_out()<CR>", opts)
 
 --[[ Visual ]]
 -- Continuous Indent

@@ -302,31 +302,29 @@ Heavily modded [Neovim](https://neovim.io/) installation.
 
 ### Custom keybindings
 
-| Category      |             Binding              | Function                         |      Mode      |
-| ------------- | :------------------------------: | -------------------------------- | :------------: |
-| General       |         <kbd>Space</kbd>         | Leader                           |     Normal     |
-| Window Nav    |   <kbd>Ctrl</kbd>+<kbd>h</kbd>   | Move cursor to left window       |     Normal     |
-|               |   <kbd>Ctrl</kbd>+<kbd>j</kbd>   | Move cursor to down window       |     Normal     |
-|               |   <kbd>Ctrl</kbd>+<kbd>k</kbd>   | Move cursor to up window         |     Normal     |
-|               |   <kbd>Ctrl</kbd>+<kbd>l</kbd>   | Move cursor to right window      |     Normal     |
-| Window Resize | <kbd>Ctrl</kbd>+<kbd>Left</kbd>  | Resize window left               |     Normal     |
-|               | <kbd>Ctrl</kbd>+<kbd>Down</kbd>  | Resize window down               |     Normal     |
-|               |  <kbd>Ctrl</kbd>+<kbd>Up</kbd>   | Resize window up                 |     Normal     |
-|               | <kbd>Ctrl</kbd>+<kbd>Right</kbd> | Resize window right              |     Normal     |
-| Buffer Nav    |  <kbd>Shift</kbd>+<kbd>h</kbd>   | Go to previous buffer            |     Normal     |
-|               |  <kbd>Shift</kbd>+<kbd>l</kbd>   | Go to next buffer                |     Normal     |
-| Comments      |     <kbd>g</kbd><kbd>c</kbd>     | Toggle line comment              | Normal, Visual |
-|               |     <kbd>g</kbd><kbd>b</kbd>     | Toggle block comment             | Normal, Visual |
-| Diagnostics   |           <kbd>K</kbd>           | Toggle hover                     |     Normal     |
-|               |     <kbd>g</kbd><kbd>d</kbd>     | Go to definition                 |     Normal     |
-|               |     <kbd>g</kbd><kbd>l</kbd>     | Toggle line diagnostic float     |     Normal     |
-|               |     <kbd>[</kbd><kbd>d</kbd>     | Go to previous diagnostic        |     Normal     |
-|               |     <kbd>]</kbd><kbd>d</kbd>     | Go to next diagnostic            |     Normal     |
-| Git           |     <kbd>[</kbd><kbd>g</kbd>     | Go to previous hunk              |     Normal     |
-|               |     <kbd>]</kbd><kbd>g</kbd>     | Go to next hunk                  |     Normal     |
-| Quickfix      |     <kbd>[</kbd><kbd>q</kbd>     | Go to previous quickfix location |     Normal     |
-|               |     <kbd>]</kbd><kbd>q</kbd>     | Go to next quickfix location     |     Normal     |
-| Terminal      |  <kbd>Ctrl</kbd>+<kbd>\\</kbd>   | Toggle terminal                  |     Normal     |
+| Category      |                    Binding                    | Function                         |      Mode      |
+| ------------- | :-------------------------------------------: | -------------------------------- | :------------: |
+| General       |               <kbd>Space</kbd>                | Leader                           |     Normal     |
+| Window Nav    |      <kbd>Ctrl</kbd>+<kbd>h/j/k/l</kbd>       | Move cursor to adjacent window   |     Normal     |
+| Window Resize | <kbd>Ctrl</kbd>+<kbd>Left/Up/Right/Down</kbd> | Resize window                    |     Normal     |
+| Buffer Nav    |         <kbd>Shift</kbd>+<kbd>h</kbd>         | Go to previous buffer            |     Normal     |
+|               |         <kbd>Shift</kbd>+<kbd>l</kbd>         | Go to next buffer                |     Normal     |
+| Comments      |           <kbd>g</kbd><kbd>c</kbd>            | Toggle line comment              | Normal, Visual |
+|               |           <kbd>g</kbd><kbd>b</kbd>            | Toggle block comment             | Normal, Visual |
+| Diagnostics   |                 <kbd>K</kbd>                  | Toggle hover                     |     Normal     |
+|               |           <kbd>g</kbd><kbd>d</kbd>            | Go to definition                 |     Normal     |
+|               |           <kbd>g</kbd><kbd>l</kbd>            | Toggle line diagnostic float     |     Normal     |
+|               |           <kbd>[</kbd><kbd>d</kbd>            | Go to previous diagnostic        |     Normal     |
+|               |           <kbd>]</kbd><kbd>d</kbd>            | Go to next diagnostic            |     Normal     |
+| Git           |           <kbd>[</kbd><kbd>g</kbd>            | Go to previous hunk              |     Normal     |
+|               |           <kbd>]</kbd><kbd>g</kbd>            | Go to next hunk                  |     Normal     |
+| Quickfix      |           <kbd>[</kbd><kbd>q</kbd>            | Go to previous quickfix location |     Normal     |
+|               |           <kbd>]</kbd><kbd>q</kbd>            | Go to next quickfix location     |     Normal     |
+| Terminal      |         <kbd>Ctrl</kbd>+<kbd>\\</kbd>         | Toggle terminal                  |     Normal     |
+| Debug         |           <kbd>[</kbd><kbd>c</kbd>            | Step back                        |     Normal     |
+|               |           <kbd>]</kbd><kbd>c</kbd>            | Step over                        |     Normal     |
+|               |           <kbd>g</kbd><kbd>i</kbd>            | Step into                        |     Normal     |
+|               |           <kbd>g</kbd><kbd>o</kbd>            | Step out                         |     Normal     |
 
 ### Plugins
 
