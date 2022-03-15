@@ -99,7 +99,7 @@ local mappings = {
 	t = {
 		name = "Text Utilities",
 		s = { "<cmd>setlocal spell!<CR>", "Spell Check" },
-		m = { "<cmd>MarkdownPreview<CR>", "Markdown Preview" },
+		m = { "<cmd>call mkdp#util#toggle_preview()<CR>", "Markdown Preview" },
 	},
 	p = {
 		name = "Packer",

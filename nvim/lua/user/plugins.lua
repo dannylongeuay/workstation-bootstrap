@@ -60,7 +60,8 @@ return packer.startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim") -- indentation line guides
 	use({ "goolord/alpha-nvim", config = 'require("user.alpha")' }) -- customizable greeter
 	use("folke/which-key.nvim") -- keybindings popup
-	use("davidgranstrom/nvim-markdown-preview") --async markdown previewer
+	-- use("davidgranstrom/nvim-markdown-preview") --async markdown previewer
+	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install" })
 	use("karb94/neoscroll.nvim") -- smooth scrolling
 	use("ggandor/lightspeed.nvim") -- motion plugin
 	use("Shatur/neovim-session-manager") -- automatic session management
