@@ -97,6 +97,13 @@ local mappings = {
 		"Find files",
 	},
 	t = {
+		name = "Test",
+		n = { "<cmd>TestNearest<CR>", "Test Nearest" },
+		f = { "<cmd>TestFile<CR>", "Test File" },
+		s = { "<cmd>TestSuite<CR>", "Test Suite" },
+		l = { "<cmd>TestLast<CR>", "Test Last" },
+	},
+	u = {
 		name = "Text Utilities",
 		s = { "<cmd>setlocal spell!<CR>", "Spell Check" },
 		m = { "<cmd>call mkdp#util#toggle_preview()<CR>", "Markdown Preview" },
@@ -173,7 +180,7 @@ local mappings = {
 		l = { "<cmd>LuaCacheLog<cr>", "View Cache Log" },
 		p = { "<cmd>LuaCacheProfile<cr>", "Profile" },
 	},
-	u = {
+	U = {
 		name = "Quickfix",
 		q = { "<cmd>QFToggle!<CR>", "Toggle Quickfix" },
 		n = { "<cmd>QNext<CR>", "Next" },
