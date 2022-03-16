@@ -60,8 +60,7 @@ return packer.startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim") -- indentation line guides
 	use({ "goolord/alpha-nvim", config = 'require("user.alpha")' }) -- customizable greeter
 	use("folke/which-key.nvim") -- keybindings popup
-	-- use("davidgranstrom/nvim-markdown-preview") --async markdown previewer
-	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install" })
+	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install" }) -- markdown previewer with mermaid js support
 	use("karb94/neoscroll.nvim") -- smooth scrolling
 	use("ggandor/lightspeed.nvim") -- motion plugin
 	use("Shatur/neovim-session-manager") -- automatic session management
@@ -112,7 +111,7 @@ return packer.startup(function(use)
 	use("lewis6991/impatient.nvim")
 
 	-- testing/debugging
-	use("klen/nvim-test")
+	use("klen/nvim-test") -- test runner
 	use("mfussenegger/nvim-dap") -- debug adapter protocol cilent
 	use("rcarriga/nvim-dap-ui") -- dap ui extension
 

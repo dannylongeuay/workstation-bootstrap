@@ -1,23 +1,27 @@
-vim.cmd([[
-  augroup _git
-    autocmd!
-    autocmd FileType gitcommit setlocal wrap
-    autocmd FileType gitcommit setlocal spell
-  augroup end
+local wrap_group = vim.api.nvim_create_augroup("_wrap", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+	group = wrap_group,
+	pattern = { "markdown", "gitcommit", "qf" },
+	callback = function()
+		vim.schedule(function()
+			vim.cmd("setlocal wrap")
+		end)
+	end,
+})
 
-  augroup _markdown
-    autocmd!
-    autocmd FileType markdown setlocal wrap
-    autocmd FileType markdown setlocal spell
-  augroup end
+local spell_group = vim.api.nvim_create_augroup("_spell", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+	group = spell_group,
+	pattern = { "markdown", "gitcommit" },
+	callback = function()
+		vim.schedule(function()
+			vim.cmd("setlocal spell")
+		end)
+	end,
+})
 
-  augroup _qf
-    autocmd!
-    autocmd FileType qf setlocal wrap
-  augroup end
-
-  augroup _autoformat
-    autocmd!
-    autocmd BufWritePre * :silent lua vim.lsp.buf.formatting_sync({}, 1000)
-  augroup END
-]])
+local format_group = vim.api.nvim_create_augroup("_autoformat", { clear = true })
+vim.api.nvim_create_autocmd("BufWritePre", {
+	group = format_group,
+	command = ":silent lua vim.lsp.buf.formatting_sync({}, 1000)",
+})
