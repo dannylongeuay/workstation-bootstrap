@@ -65,6 +65,14 @@ local buffer_clients_and_sources = function()
 	return table.concat(clients_and_sources, ", ")
 end
 
+local gps_location = function()
+	local gps_status_ok, gps = pcall(require, "nvim-gps")
+	if not gps_status_ok or not gps.is_available() then
+		return
+	end
+	return gps.get_location()
+end
+
 lualine.setup({
 	options = {
 		icons_enabled = true,
@@ -77,7 +85,7 @@ lualine.setup({
 	sections = {
 		lualine_a = { branch },
 		lualine_b = { diff },
-		lualine_c = { diagnostics },
+		lualine_c = { diagnostics, gps_location },
 		lualine_x = { buffer_clients_and_sources },
 		lualine_y = { filetype },
 		lualine_z = { location },

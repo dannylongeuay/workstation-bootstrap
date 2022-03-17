@@ -101,6 +101,7 @@ return packer.startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
+	use("SmiteshP/nvim-gps") -- context on current cursor position
 
 	-- Git
 	use("lewis6991/gitsigns.nvim") -- gitgutter signs

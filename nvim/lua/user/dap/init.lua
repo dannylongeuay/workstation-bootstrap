@@ -28,6 +28,17 @@ dap.configurations.python = {
 	},
 }
 
+local debug_function = function()
+	local gps_status_ok, gps = pcall(require, "nvim-gps")
+	if not gps_status_ok or not gps.is_available() then
+		return
+	end
+	local data = gps.get_data()
+	P(data)
+end
+
+vim.api.nvim_add_user_command("DebugFunction", debug_function, {})
+
 --[[ Go ]]
 dap.adapters.go = function(callback, _)
 	local stdout = vim.loop.new_pipe(false)
