@@ -68,7 +68,7 @@ end
 local gps_location = function()
 	local gps_status_ok, gps = pcall(require, "nvim-gps")
 	if not gps_status_ok or not gps.is_available() then
-		return
+		return ""
 	end
 	return gps.get_location()
 end
