@@ -102,6 +102,7 @@ return packer.startup(function(use)
 		run = ":TSUpdate",
 	})
 	use("SmiteshP/nvim-gps") -- context on current cursor position
+	use("towolf/vim-helm") -- helm syntax highlighting
 
 	-- Git
 	use("lewis6991/gitsigns.nvim") -- gitgutter signs
@@ -110,7 +111,7 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim") -- linting and formatting integration with LSP
 
 	-- performance
-	use("lewis6991/impatient.nvim")
+	use("lewis6991/impatient.nvim") -- cache plugins
 
 	-- testing/debugging
 	use("klen/nvim-test") -- test runner
