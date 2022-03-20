@@ -28,13 +28,94 @@ dap.configurations.python = {
 	},
 }
 
-local debug_function = function()
+local filter_nil = function(items)
+	return vim.tbl_filter(function(x)
+		return x
+	end, items)
+end
+
+local get_function_name = function()
 	local gps_status_ok, gps = pcall(require, "nvim-gps")
 	if not gps_status_ok or not gps.is_available() then
-		return
+		return nil, nil, nil
 	end
 	local data = gps.get_data()
-	P(data)
+	local classname = nil
+	local funcname = nil
+	local methodname = nil
+	for _, node in ipairs(data) do
+		if node.type == "class-name" then
+			classname = node.text
+		end
+		if node.type == "function-name" then
+			funcname = node.text
+		end
+		if node.type == "method-name" then
+			methodname = node.text
+		end
+	end
+	return funcname, classname, methodname
+end
+
+local debug_python_function = function()
+	local funcname, classname, methodname = get_function_name()
+	local test_pattern = funcname
+	if classname and methodname then
+		test_pattern = classname .. " and " .. methodname
+	elseif classname then
+		test_pattern = classname
+	end
+	if not test_pattern then
+		print("no function or method found to debug at cursor")
+		return
+	end
+	if not string.lower(test_pattern):match("^test") then
+		print("not a valid test to debug at cursor, must start with 'Test' or 'test'")
+		return
+	end
+	dap.run({
+		type = "python",
+		request = "launch",
+		name = table.concat({ "Debug", test_pattern }, " "),
+		module = "pytest",
+		args = { "-k", test_pattern },
+	})
+end
+
+local debug_go_function = function()
+	local funcname, _, methodname = get_function_name()
+	local test_pattern = funcname
+	local test_name = funcname
+	if methodname then
+		test_pattern = ".../" .. methodname
+		test_name = methodname
+	end
+	if not test_pattern then
+		print("no function or method found to debug at cursor")
+		return
+	end
+	if not string.lower(test_name):match("^test") then
+		print("not a valid test to debug at cursor, must start with 'Test' or 'test'")
+		return
+	end
+	dap.run({
+		type = "go",
+		request = "launch",
+		name = table.concat({ "Debug", test_pattern }, " "),
+		mode = "test",
+		program = "./${relativeFileDirname}",
+		args = { "-test.v", "-test.run", test_pattern },
+	})
+end
+
+local debug_map = {
+	["python"] = debug_python_function,
+	["go"] = debug_go_function,
+}
+
+local debug_function = function()
+	local lang = vim.bo.filetype
+	debug_map[lang]()
 end
 
 vim.api.nvim_add_user_command("DebugFunction", debug_function, {})

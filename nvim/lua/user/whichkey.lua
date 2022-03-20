@@ -150,6 +150,7 @@ local mappings = {
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
 		n = { "<cmd>NullLsInfo<cr>", "Null LS Info" },
 		t = { "<cmd>TSInstallInfo<cr>", "Tree Sitter Info" },
+		d = { "<cmd>lua vim.diagnostic.disable()<cr>", "Disable Diagnostics" },
 	},
 	s = {
 		name = "Search",
@@ -199,6 +200,7 @@ local mappings = {
 	},
 	d = {
 		name = "Debug",
+		d = { "<cmd>DebugFunction<CR>", "Debug Function" },
 		b = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", "Toggle Breakpoint" },
 		C = { "<cmd>lua require'dap'.clear_breakpoints()<CR>", "Clear Breakpoints" },
 		q = { "<cmd>lua require'dap'.list_breakpoints()<CR>", "List Breakpoints" },
