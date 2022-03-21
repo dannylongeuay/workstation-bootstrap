@@ -98,10 +98,7 @@ local mappings = {
 	},
 	t = {
 		name = "Test",
-		n = { "<cmd>TestNearest<CR>", "Test Nearest" },
-		f = { "<cmd>TestFile<CR>", "Test File" },
-		s = { "<cmd>TestSuite<CR>", "Test Suite" },
-		l = { "<cmd>TestLast<CR>", "Test Last" },
+		t = { "<cmd>TestFunction<CR>", "Test Function" },
 	},
 	u = {
 		name = "Text Utilities",

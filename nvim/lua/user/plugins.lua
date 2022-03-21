@@ -113,8 +113,7 @@ return packer.startup(function(use)
 	-- performance
 	use("lewis6991/impatient.nvim") -- cache plugins
 
-	-- testing/debugging
-	use("klen/nvim-test") -- test runner
+	-- debugging
 	use("mfussenegger/nvim-dap") -- debug adapter protocol cilent
 	use("rcarriga/nvim-dap-ui") -- dap ui extension
 
