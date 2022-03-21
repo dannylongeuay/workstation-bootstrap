@@ -54,7 +54,7 @@ dap.configurations.go = {
 	},
 }
 
-M.test_info_go = function()
+M.get_test_info = function()
 	local funcname, _, methodname = utils.get_gps_info()
 	local test_pattern = funcname
 	local test_name = funcname
@@ -65,7 +65,7 @@ M.test_info_go = function()
 	return test_pattern, test_name
 end
 
-M.test_dap_config_go = function(test_pattern)
+M.get_test_dap_config = function(test_pattern)
 	return {
 		type = "go",
 		request = "launch",

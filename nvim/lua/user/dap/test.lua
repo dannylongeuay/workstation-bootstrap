@@ -2,8 +2,8 @@ local python = require("user.dap.lang.python")
 local go = require("user.dap.lang.go")
 
 local test_info_map = {
-	["python"] = python.test_info_python,
-	["go"] = go.test_info_go,
+	["python"] = python.get_test_info,
+	["go"] = go.get_test_info,
 }
 
 local test_function = function()

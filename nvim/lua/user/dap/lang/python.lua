@@ -29,7 +29,7 @@ dap.configurations.python = {
 	},
 }
 
-M.test_info_python = function()
+M.get_test_info = function()
 	local funcname, classname, methodname = utils.get_gps_info()
 	local test_pattern = funcname
 	local test_name = funcname
@@ -43,7 +43,7 @@ M.test_info_python = function()
 	return test_pattern, test_name
 end
 
-M.test_dap_config_python = function(test_pattern)
+M.get_test_dap_config = function(test_pattern)
 	return {
 		type = "python",
 		request = "launch",
