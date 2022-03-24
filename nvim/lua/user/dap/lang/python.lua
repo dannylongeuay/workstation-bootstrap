@@ -53,4 +53,8 @@ M.get_test_dap_config = function(test_pattern)
 	}
 end
 
+M.get_test_cmd = function(test_pattern)
+	return table.concat({ "pytest", "-k", string.format("%q", test_pattern) }, " ")
+end
+
 return M

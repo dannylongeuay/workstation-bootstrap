@@ -4,3 +4,4 @@ require("user.dap.test")
 
 require("user.dap.lang.python")
 require("user.dap.lang.go")
+require("user.dap.lang.javascript")

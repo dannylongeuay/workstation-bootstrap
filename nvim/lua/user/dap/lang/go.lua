@@ -76,4 +76,8 @@ M.get_test_dap_config = function(test_pattern)
 	}
 end
 
+M.get_test_cmd = function(test_pattern)
+	return table.concat({ "go", "test", "-v", "./...", "-test.run", test_pattern }, " ")
+end
+
 return M

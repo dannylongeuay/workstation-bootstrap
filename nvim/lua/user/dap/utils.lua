@@ -23,4 +23,13 @@ M.get_gps_info = function()
 	return funcname, classname, methodname
 end
 
+M.term_exec_cmd = function(cmd)
+	local tt_status_ok, tt = pcall(require, "toggleterm")
+	if not tt_status_ok then
+		print("toggleterm is required to execute commands")
+		return
+	end
+	tt.exec(cmd, 0, 96, "", "vertical", false, true)
+end
+
 return M

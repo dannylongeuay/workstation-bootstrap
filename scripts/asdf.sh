@@ -222,6 +222,15 @@ then
     npm install -g live-server
 fi
 
+DEBUGGERS_PATH=$HOME/.local/share/debuggers
+NODE_DEBUGGER_PATH=$DEBUGGERS_PATH/vscode-node-debug2
+if [ ! -d $NODE_DEBUGGER_PATH ]
+then
+    mkdir -p $DEBUGGERS_PATH 
+    cd $DEBUGGERS_PATH && git clone https://github.com/microsoft/vscode-node-debug2.git
+    cd $NODE_DEBUGGER_PATH && npm install && npm run build
+fi
+
 if ! which poetry > /dev/null
 then
     printf "\n##### Installing Poerty #####\n\n"
