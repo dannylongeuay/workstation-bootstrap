@@ -10,14 +10,14 @@ local javascript = require("user.dap.lang.javascript")
 local test_info_map = {
 	["python"] = python.get_test_info,
 	["go"] = go.get_test_info,
-	-- ["javascript"] = javascript.get_test_info,
+	["javascript"] = javascript.get_test_info,
 	-- ["typescript"] = javascript.get_test_info,
 }
 
 local test_dap_config_map = {
 	["python"] = python.get_test_dap_config,
 	["go"] = go.get_test_dap_config,
-	-- ["javascript"] = javascript.get_test_dap_config,
+	["javascript"] = javascript.get_test_dap_config,
 	-- ["typescript"] = javascript.get_test_dap_config,
 }
 

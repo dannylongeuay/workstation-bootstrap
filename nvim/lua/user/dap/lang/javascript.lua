@@ -34,16 +34,21 @@ M.get_test_info = function()
 	return test_pattern, test_name
 end
 
+-- This "should work" for javascript, but not typescript.
+-- https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#Javascript
+-- should also look into https://github.com/firefox-devtools/vscode-firefox-debug
 M.get_test_dap_config = function(test_pattern)
 	return {
 		type = "node2",
 		request = "launch",
 		name = table.concat({ "Debug", test_pattern }, " "),
-		runtimeArgs = { "--inspect-brk", "node_modules/.bin/jest", "--no-coverage" },
-		args = { "--no-cache" },
+		runtimeArgs = { "--inspect-brk", "node_modules/.bin/jest", "-t", test_pattern },
+		-- args = { "--no-cache" },
 		cwd = vim.fn.getcwd(),
-		sourceMaps = true,
+		sourceMaps = true, -- TODO: check out https://code.visualstudio.com/docs/typescript/typescript-debugging
 		protocol = "inspector",
+		port = 9229,
+		-- console = "integratedTerminal",
 	}
 end
 
