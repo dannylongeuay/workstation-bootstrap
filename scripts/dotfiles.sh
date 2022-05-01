@@ -24,3 +24,4 @@ fi
 
 cp dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
 printf "Installed alacritty.yml\n"
+

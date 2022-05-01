@@ -18,8 +18,11 @@ printf "\n##### Bootstrapping Process Started #####\n"
 # Install asdf
 /bin/bash scripts/asdf.sh
 
-#Install nvim
+# Install Neovim
 /bin/bash scripts/nvim.sh
+
+# Install Helix Editor
+/bin/bash scripts/helix.sh
 
 # Copy dotfiles
 /bin/bash scripts/dotfiles.sh
