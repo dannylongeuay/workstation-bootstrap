@@ -20,7 +20,7 @@ fi
 
 if [ ! -L /usr/local/bin/nvim ]
 then
-  sudo ln -s /usr/local/bin/nvim-nightly /usr/local/bin/nvim
+  sudo ln -s /usr/local/bin/nvim-stable /usr/local/bin/nvim
 fi
 
 if [ ! -d ~/.config/nvim ]

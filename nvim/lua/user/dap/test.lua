@@ -36,4 +36,4 @@ local test_function = function()
 	utils.term_exec_cmd(test_cmd_map[lang](test_pattern))
 end
 
-vim.api.nvim_add_user_command("TestFunction", test_function, {})
+vim.api.nvim_create_user_command("TestFunction", test_function, {})

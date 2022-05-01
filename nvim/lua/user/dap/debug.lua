@@ -39,4 +39,4 @@ local debug_function = function()
 	dap.run(test_dap_config_map[lang](test_pattern))
 end
 
-vim.api.nvim_add_user_command("DebugFunction", debug_function, {})
+vim.api.nvim_create_user_command("DebugFunction", debug_function, {})
