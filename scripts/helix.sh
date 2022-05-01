@@ -33,3 +33,8 @@ $CARGO_ROOT_DIR/bin/hx --grammar build > /dev/null || echo "Unable to build gram
 popd
 cp dotfiles/helix.toml ~/.config/helix/config.toml
 
+# Language Servers
+if ! which typescript-language-server > /dev/null
+then
+    npm install -g typescript typescript-language-server
+fi

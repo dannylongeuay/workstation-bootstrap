@@ -1,1 +1,4 @@
-theme = "dark_plus"
+theme = "tokyonight_storm"
+
+[editor]
+mouse = false
