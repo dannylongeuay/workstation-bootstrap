@@ -1,0 +1,9 @@
+theme = "tokyonight_storm"
+
+[editor]
+mouse = false
+true-color = true
+
+[editor.cursor-shape]
+insert = "bar"
+select = "underline"

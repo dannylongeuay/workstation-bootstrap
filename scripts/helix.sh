@@ -31,7 +31,8 @@ $CARGO_ROOT_DIR/bin/hx --grammar fetch > /dev/null || echo "Unable to fetch gram
 $CARGO_ROOT_DIR/bin/hx --grammar build > /dev/null || echo "Unable to build grammers"
 
 popd
-cp dotfiles/helix.toml ~/.config/helix/config.toml
+cp dotfiles/helix-config.toml ~/.config/helix/config.toml
+cp dotfiles/helix-languages.toml ~/.config/helix/languages.toml
 
 # Language Servers
 if ! which typescript-language-server > /dev/null
