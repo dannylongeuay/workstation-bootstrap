@@ -124,6 +124,11 @@ fi
 mkdir -p $HOME/.local/bin
 export GOBIN=$HOME/.local/bin
 
+if ! which gopls > /dev/null
+then
+    go install golang.org/x/tools/gopls@latest
+fi
+
 if ! which swag > /dev/null
 then
     go install github.com/swaggo/swag/cmd/swag@latest
