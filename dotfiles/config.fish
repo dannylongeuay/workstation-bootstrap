@@ -5,6 +5,8 @@ if status is-interactive
   export EDITOR=nvim
   alias daws='docker run --rm -it -v ~/.aws:/root/.aws -v (pwd):/aws -e AWS_PROFILE amazon/aws-cli'
   alias psource="source (poetry env list --full-path | grep Activated | cut -d' ' -f1)/bin/activate.fish"
+  abbr --add --global el exa -lh
+  abbr --add --global et exa -T
   abbr --add --global ga git add -A
   abbr --add --global gb git branch
   abbr --add --global gbd git branch -d
