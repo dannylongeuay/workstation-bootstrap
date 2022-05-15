@@ -92,6 +92,7 @@ Accept first suggested word - <kbd>Alt</kbd>+<kbd>F</kbd>
 Noteworthy packages installed using aptitude:
 
 - curl
+- [entr](https://github.com/eradman/entr)
 - gawk
 - [gh](https://cli.github.com/)
 - git
@@ -145,6 +146,7 @@ The following is a list of tools installed using [asdf-vm](https://asdf-vm.com/)
 - [sops](https://github.com/mozilla/sops)
 - [terraform](https://www.terraform.io/)
 - [tilt](https://tilt.dev/)
+- [zoxide](https://github.com/ajeetdsouza/zoxide)
 
 **Bat Example:**
 

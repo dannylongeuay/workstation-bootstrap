@@ -284,3 +284,11 @@ then
     asdf global tilt latest
 fi
 
+if ! which zoxide > /dev/null
+then
+    printf "\n##### Installing Zoxide #####\n\n"
+    asdf plugin add zoxide > /dev/null || true
+    asdf install zoxide latest
+    asdf global zoxide latest
+fi
+
