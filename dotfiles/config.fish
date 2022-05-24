@@ -1,6 +1,7 @@
 if status is-interactive
   starship init fish | source
   source ~/.asdf/asdf.fish
+  source ~/.asdf/plugins/java/set-java-home.fish
   doctl completion fish | source
   zoxide init fish | source
   export EDITOR=nvim
@@ -29,6 +30,7 @@ if status is-interactive
   abbr --add --global tmd "tmux new -s dev"
   abbr --add --global tma tmux a
   abbr --add --global xc "xclip -selection clipboard"
+  abbr --add --global zz "z -"
   fish_add_path $HOME/.local/bin
   fish_add_path $HOME/.cargo/bin
 end

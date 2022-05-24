@@ -1,3 +1,18 @@
 [[language]]
+name = "latex"
+language-server = { command = "ltex-ls" }
+
+[[language]]
+name = "lua"
+language-server = { command = "lua-language-server" }
+
+[[language]]
+name = "markdown"
+language-server = { command = "ltex-ls" }
+file-types = ["md"]
+scope = "source.markdown"
+roots = []
+
+[[language]]
 name = "typescript"
 auto-format = true

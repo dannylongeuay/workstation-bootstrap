@@ -2,6 +2,8 @@
 
 printf "\n##### Installing ASDF #####\n\n"
 
+mkdir -p $HOME/.local/bin
+
 # Install ASDF
 if [ ! -d "$HOME/.asdf" ]
 then
@@ -64,6 +66,35 @@ then
     cargo install --root ~/.cargo stylua
 fi
 
+if ! which lua-language-server > /dev/null
+then
+    curl -o /tmp/lua-language-server.tar.gz -L https://github.com/sumneko/lua-language-server/releases/download/3.2.3/lua-language-server-3.2.3-linux-x64.tar.gz
+    mkdir -p ~/.local/share/lsp/lua-language-server
+    tar -xzf /tmp/lua-language-server.tar.gz -C ~/.local/share/lsp/lua-language-server
+    ln -s ~/.local/share/lsp/lua-language-server/bin/lua-language-server ~/.local/bin/lua-language-server
+    rm -f /tmp/lua-language-server.tar.gz
+fi
+
+if ! which taplo > /dev/null
+then
+    cargo install --root ~/.cargo taplo-cli
+fi
+
+if ! which rust-analyzer > /dev/null
+then
+    curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.cargo/bin/rust-analyzer
+    chmod +x ~/.cargo/bin/rust-analyzer
+fi
+
+if ! which ltex-ls > /dev/null
+then
+    curl -o /tmp/ltex-ls.tar.gz -L https://github.com/valentjn/ltex-ls/releases/download/15.2.0/ltex-ls-15.2.0-linux-x64.tar.gz
+    mkdir -p ~/.local/share/lsp/ltex-ls
+    tar -xzf /tmp/ltex-ls.tar.gz -C ~/.local/share/lsp/ltex-ls
+    ln -s ~/.local/share/lsp/ltex-ls/ltex-ls-15.2.0/bin/ltex-ls ~/.local/bin/ltex-ls
+    rm -f /tmp/ltex-ls.tar.gz
+fi
+
 if ! which delta > /dev/null
 then
     printf "\n##### Installing Delta #####\n\n"
@@ -121,7 +152,6 @@ then
 fi
 
 # Go binaries
-mkdir -p $HOME/.local/bin
 export GOBIN=$HOME/.local/bin
 
 if ! which gopls > /dev/null
@@ -227,6 +257,31 @@ then
     npm install -g live-server
 fi
 
+if ! which bash-language-server > /dev/null
+then
+    npm install -g bash-language-server
+fi
+
+if ! which docker-langserver > /dev/null
+then
+    npm install -g dockerfile-language-server-nodejs
+fi
+
+if ! which vscode-json-language-server > /dev/null
+then
+    npm install -g vscode-langservers-extracted
+fi
+
+if ! which svelteserver > /dev/null
+then
+    npm install -g svelte-language-server
+fi
+
+if ! which yaml-language-server > /dev/null
+then
+    npm install -g yaml-language-server
+fi
+
 DEBUGGERS_PATH=$HOME/.local/share/debuggers
 NODE_DEBUGGER_PATH=$DEBUGGERS_PATH/vscode-node-debug2
 if [ ! -d $NODE_DEBUGGER_PATH ]
@@ -274,6 +329,16 @@ then
     asdf plugin-add terraform https://github.com/asdf-community/asdf-hashicorp.git > /dev/null || true
     asdf install terraform 1.0.11
     asdf global terraform 1.0.11
+fi
+
+if ! which terraform-ls > /dev/null
+then
+    curl -o /tmp/terraform-ls.zip https://releases.hashicorp.com/terraform-ls/0.27.0/terraform-ls_0.27.0_linux_amd64.zip    
+    unzip /tmp/terraform-ls.zip -d /tmp/terraform-ls
+    mv /tmp/terraform-ls/terraform-ls ~/.local/bin/terraform-ls
+    chmod +x ~/.local/bin/terraform-ls
+    rm -f /tmp/terraform-ls.zip
+    rmdir /tmp/terraform-ls
 fi
 
 if ! which tilt > /dev/null

@@ -280,6 +280,7 @@ Synchronize panes - <kbd>Ctrl</kbd>+<kbd>s</kbd>
 - `gmc` = git merge --continue
 - `gpu` = git push
 - `gs` = git status
+- `zz` = z -
 
 ## Fonts
 
