@@ -8,7 +8,7 @@ git config --global advice.statusHints false
 
 git config --global color.ui true
 
-git config --global core.editor vim
+git config --global core.editor hx
 git config --global core.pager delta
 
 git config --global delta.navigate true
