@@ -36,7 +36,7 @@ declare -A arr2=(
 declare -A arr3=(
     [tool_binary]="cargo"
     [tool_name]="rust" 
-    [tool_version]="latest"
+    [tool_version]="1.61.0"
     [tool_url]=""
 )
 
@@ -50,7 +50,7 @@ declare -A arr4=(
 declare -A arr5=(
     [tool_binary]="doctl"
     [tool_name]="doctl" 
-    [tool_version]="latest"
+    [tool_version]="1.76.2"
     [tool_url]=""
 )
 
@@ -78,7 +78,7 @@ declare -A arr8=(
 declare -A arr9=(
     [tool_binary]="fzf"
     [tool_name]="fzf" 
-    [tool_version]="latest"
+    [tool_version]="0.30.0"
     [tool_url]=""
 )
 
@@ -99,21 +99,21 @@ declare -A arr11=(
 declare -A arr12=(
     [tool_binary]="ht"
     [tool_name]="httpie-go" 
-    [tool_version]="latest"
+    [tool_version]="0.7.0"
     [tool_url]=""
 )
 
 declare -A arr13=(
     [tool_binary]="k3d"
     [tool_name]="k3d" 
-    [tool_version]="latest"
+    [tool_version]="5.4.1"
     [tool_url]=""
 )
 
 declare -A arr14=(
     [tool_binary]="k9s"
     [tool_name]="k9s" 
-    [tool_version]="latest"
+    [tool_version]="0.25.18"
     [tool_url]=""
 )
 
@@ -169,7 +169,7 @@ declare -A arr21=(
 declare -A arr22=(
     [tool_binary]="tilt"
     [tool_name]="tilt" 
-    [tool_version]="latest"
+    [tool_version]="0.30.1"
     [tool_url]=""
 )
 
