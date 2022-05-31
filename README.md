@@ -21,7 +21,7 @@ and professional developer workstations.
 
 ## Disclaimer
 
-This repo has only been tested and used on `Pop!_OS 21.04`. Use at your own risk
+This repo has only been tested and used on `Pop!_OS 22.04`. Use at your own risk
 on other distributions/platforms!
 
 ## Usage

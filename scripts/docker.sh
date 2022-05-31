@@ -5,7 +5,7 @@ printf "\n##### Installing Docker #####\n\n"
 if [ ! -x "$(command -v docker)" ];
 then
   # Install docker
-  sudo sh -c "$(curl -fsSL https://get.docker.com)"
+  sudo apt install -y docker-ce
   getent group docker || sudo groupadd docker && sudo usermod -aG docker $USER
 
   # Install docker compose (note: this is v2 and not docker-compose v1)
