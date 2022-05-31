@@ -92,7 +92,7 @@ declare -A arr10=(
 declare -A arr11=(
     [tool_binary]="helm"
     [tool_name]="helm" 
-    [tool_version]="latest"
+    [tool_version]="3.9.0"
     [tool_url]=""
 )
 
@@ -155,7 +155,7 @@ declare -A arr19=(
 declare -A arr20=(
     [tool_binary]="sops"
     [tool_name]="sops" 
-    [tool_version]="latest"
+    [tool_version]="3.7.3"
     [tool_url]=""
 )
 
