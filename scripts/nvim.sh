@@ -1,9 +1,12 @@
 #!/bin/bash
+set -e
+
+FORCE=$1
 
 printf "\n##### Installing Neovim #####\n\n"
 
 # Install neovim nightly
-if [ ! -f /usr/local/bin/nvim-nightly ]
+if [ ! -f /usr/local/bin/nvim-nightly ] || [ $FORCE == true ]
 then
   curl -L https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage -o /tmp/nvim-nightly
   chmod u+x /tmp/nvim-nightly
@@ -11,7 +14,7 @@ then
 fi
 
 # Install neovim stable
-if [ ! -f /usr/local/bin/nvim-stable ]
+if [ ! -f /usr/local/bin/nvim-stable ] || [ $FORCE == true ]
 then
   curl -L https://github.com/neovim/neovim/releases/download/stable/nvim.appimage -o /tmp/nvim-stable
   chmod u+x /tmp/nvim-stable

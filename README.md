@@ -31,6 +31,13 @@ Clone this repo and run the following top-level script:
 ```
 ./setup.sh
 ```
+OR
+
+```
+./setup.sh -f
+```
+
+> -f will force updates
 
 Then log out and log back in for the changes to take full affect.
 
@@ -133,7 +140,6 @@ The following is a list of tools installed using [asdf-vm](https://asdf-vm.com/)
 - [k3d](https://k3d.io)
 - [k9s](https://github.com/derailed/k9s)
 - [kubectl](https://kubernetes.io/docs/tasks/tools/)
-- [kubeseal](https://github.com/bitnami-labs/sealed-secrets)
 - [node](https://nodejs.org/en/)
   - [commitizen](https://github.com/commitizen/cz-cli)
   - [cz-emoji](https://github.com/ngryman/cz-emoji)

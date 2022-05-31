@@ -1,29 +1,43 @@
 #!/bin/bash
+set -e
+
+FORCE=$1
 
 printf "\n##### Installing OS Packages #####\n\n"
 
 # Setup apt sources
-GITHUBCLI_ARCHIVE_KEYRING="/usr/share/keyrings/githubcli-archive-keyring.gpg"
+declare -A arr1=(
+    [keyring_path]="/usr/share/keyrings/githubcli-archive-keyring.gpg"
+    [keyring_url]="https://cli.github.com/packages/githubcli-archive-keyring.gpg"
+    [source_path]="/etc/apt/sources.list.d/github-cli.list"
+    [source_url]="https://cli.github.com/packages stable main"
+)
 
-if [ ! -f $GITHUBCLI_ARCHIVE_KEYRING ]
-then
-    curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo gpg --dearmor -o $GITHUBCLI_ARCHIVE_KEYRING
-    echo \
-    "deb [arch=$(dpkg --print-architecture) signed-by=$GITHUBCLI_ARCHIVE_KEYRING] https://cli.github.com/packages stable main" \
-    | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
-fi
+declare -A arr2=(
+    [keyring_path]="/usr/share/keyrings/docker-archive-keyring.gpg"
+    [keyring_url]="https://download.docker.com/linux/ubuntu/gpg"
+    [source_path]="/etc/apt/sources.list.d/docker.list"
+    [source_url]="https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+)
 
-DOCKER_ARCHIVE_KEYRING="/usr/share/keyrings/docker-archive-keyring.gpg"
 
-if [ ! -f $DOCKER_ARCHIVE_KEYRING ]
-then
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o $DOCKER_ARCHIVE_KEYRING
-    echo \
-    "deb [arch=$(dpkg --print-architecture) signed-by=$DOCKER_ARCHIVE_KEYRING] https://download.docker.com/linux/ubuntu \
-    $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-fi
+apt_sources=("${!arr@}")
 
-if ! sudo apt-add-repository -L | grep fish-shell > /dev/null
+declare -n ref
+
+for ref in "${apt_sources[@]}"
+do
+    if [ ! -f "${ref[keyring_path]}" ] || [ $FORCE == true ]
+    then
+        printf "Adding source url %s to source path %s...\n" "${ref[source_url]}" "${ref[source_path]}"
+        sudo rm -f "${ref[keyring_path]}"
+        curl -fsSL "${ref[keyring_url]}"| sudo gpg --dearmor -o "${ref[keyring_path]}"
+        echo "deb [arch=$(dpkg --print-architecture) signed-by=${ref[keyring_path]}] ${ref[source_url]}" \
+        | sudo tee "${ref[source_path]}" > /dev/null
+    fi
+done
+
+if ! sudo apt-add-repository -L | grep fish-shell > /dev/null || [ $FORCE == true ]
 then
     sudo apt-add-repository -y ppa:fish-shell/release-3
 fi

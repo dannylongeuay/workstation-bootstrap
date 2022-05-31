@@ -1,8 +1,11 @@
 #!/bin/bash
+set -e
+
+FORCE=$1
 
 printf "\n##### Installing Docker #####\n\n"
 
-if [ ! -x "$(command -v docker)" ];
+if [ ! -x "$(command -v docker)" ] || [ $FORCE == true ]
 then
   # Install docker
   sudo apt install -y docker-ce
@@ -14,7 +17,7 @@ then
   chmod +x ~/.docker/cli-plugins/docker-compose
 fi
 
-if [ ! -x "$(command -v docker-compose)" ];
+if [ ! -x "$(command -v docker-compose)" ] || [ $FORCE == true ]
 then
   # Install docker-compose v1
   sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose

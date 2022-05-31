@@ -1,27 +1,37 @@
 #!/bin/bash
+set -e
+
+FORCE=$1
 
 printf "\n##### Installing Fonts #####\n\n"
 
 FONTS_DIR="$HOME/.local/share/fonts"
-DROIDSANS="$FONTS_DIR/DroidSansMono.zip" 
-DEJAVUSANS="$FONTS_DIR/DejaVuSansMono.zip"
 
 mkdir -p $FONTS_DIR
 
-if [ ! -f "$DROIDSANS" ]
-then
-  printf "DroidSansMono font installed\n"
-  curl -fLo "$DROIDSANS" https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/DroidSansMono.zip
-  unzip $DROIDSANS -d $FONTS_DIR
-else
-  printf "DroidSansMono font already installed\n"
-fi
+declare -A arr1=(
+    [zip_path]="$FONTS_DIR/DroidSansMono.zip" 
+    [font_url]="https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/DroidSansMono.zip"
+)
 
-if [ ! -f "$DEJAVUSANS" ]
-then
-  printf "DejaVuSansMono font installed\n"
-  curl -fLo "$DEJAVUSANS" https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/DejaVuSansMono.zip
-  unzip $DEJAVUSANS -d $FONTS_DIR
-else
-  printf "DejaVuSansMono font already installed\n"
-fi
+declare -A arr2=(
+    [zip_path]="$FONTS_DIR/DejaVuSansMono.zip"
+    [font_url]="https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/DejaVuSansMono.zip"
+)
+
+fonts=("${!arr@}")
+
+declare -n ref
+
+for ref in "${fonts[@]}"
+do
+  if [ ! -f "${ref[zip_path]}" ] || [ $FORCE == true ]
+  then
+    printf "Installing %s...\n" "${ref[zip_path]}"
+    curl -fLo "${ref[zip_path]}" "${ref[font_url]}"
+    unzip -o "${ref[zip_path]}" -d $FONTS_DIR
+  else
+    printf "%s already installed...\n" "${ref[zip_path]}"
+  fi
+done
+

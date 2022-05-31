@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 printf "\n##### Installing Starship Prompt #####\n\n"
 

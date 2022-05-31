@@ -1,4 +1,7 @@
 #!/bin/bash
+set -e
+
+FORCE=$1
 
 printf "\n##### Installing ASDF #####\n\n"
 
@@ -7,7 +10,8 @@ mkdir -p $HOME/.local/bin
 # Install ASDF
 if [ ! -d "$HOME/.asdf" ]
 then
-    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.1 > /dev/null || true
+    rm -rf "$HOME/.asdf"
+    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.1 > /dev/null || true
 else
     . $HOME/.asdf/asdf.sh
     asdf update
@@ -15,345 +19,193 @@ fi
 
 . $HOME/.asdf/asdf.sh
 
-if ! which ansible > /dev/null
-then
-    printf "\n##### Installing Ansible #####\n\n"
-    asdf plugin add ansible-base https://github.com/amrox/asdf-pyapp.git > /dev/null || true
-    asdf install ansible-base 2.10.15
-    asdf global ansible-base 2.10.15
-fi
+declare -A arr1=(
+    [tool_binary]="aws"
+    [tool_name]="awscli" 
+    [tool_version]="latest"
+    [tool_url]=""
+)
 
-if ! which aws > /dev/null
-then
-    printf "\n##### Installing AWS CLI #####\n\n"
-    asdf plugin add awscli > /dev/null || true
-    asdf install awscli 2.4.5
-    asdf global awscli 2.4.5
-fi
+declare -A arr2=(
+    [tool_binary]="bat"
+    [tool_name]="bat" 
+    [tool_version]="latest"
+    [tool_url]=""
+)
 
-if ! which bat > /dev/null
-then
-    printf "\n##### Installing bat #####\n\n"
-    asdf plugin add bat > /dev/null || true
-    asdf install bat latest
-    asdf global bat latest
-fi
+declare -A arr3=(
+    [tool_binary]="cargo"
+    [tool_name]="rust" 
+    [tool_version]="latest"
+    [tool_url]=""
+)
 
-if ! which bpytop > /dev/null
-then
-    printf "\n##### Installing bpytop #####\n\n"
-    asdf plugin add bpytop https://github.com/amrox/asdf-pyapp.git > /dev/null || true
-    asdf install bpytop latest
-    asdf global bpytop latest
-fi
+declare -A arr4=(
+    [tool_binary]="delta"
+    [tool_name]="delta" 
+    [tool_version]="latest"
+    [tool_url]=""
+)
 
-if ! which cargo > /dev/null
-then
-    printf "\n##### Installing Rust #####\n\n"
-    asdf plugin add rust > /dev/null || true
-    asdf install rust latest
-    asdf global rust latest
-fi
+declare -A arr5=(
+    [tool_binary]="doctl"
+    [tool_name]="doctl" 
+    [tool_version]="latest"
+    [tool_url]=""
+)
 
-# Rust crates
-if [ ! -d ~/.cargo ]
-then
-  mkdir -p ~/.cargo
-fi
+declare -A arr6=(
+    [tool_binary]="duf"
+    [tool_name]="duf" 
+    [tool_version]="latest"
+    [tool_url]=""
+)
 
-if ! which stylua > /dev/null
-then
-    cargo install --root ~/.cargo stylua
-fi
+declare -A arr7=(
+    [tool_binary]="exa"
+    [tool_name]="exa" 
+    [tool_version]="latest"
+    [tool_url]=""
+)
 
-if ! which lua-language-server > /dev/null
-then
-    curl -o /tmp/lua-language-server.tar.gz -L https://github.com/sumneko/lua-language-server/releases/download/3.2.3/lua-language-server-3.2.3-linux-x64.tar.gz
-    mkdir -p ~/.local/share/lsp/lua-language-server
-    tar -xzf /tmp/lua-language-server.tar.gz -C ~/.local/share/lsp/lua-language-server
-    ln -s ~/.local/share/lsp/lua-language-server/bin/lua-language-server ~/.local/bin/lua-language-server
-    rm -f /tmp/lua-language-server.tar.gz
-fi
+declare -A arr8=(
+    [tool_binary]="fd"
+    [tool_name]="fd" 
+    [tool_version]="latest"
+    [tool_url]=""
+)
 
-if ! which taplo > /dev/null
-then
-    cargo install --root ~/.cargo taplo-cli
-fi
+declare -A arr9=(
+    [tool_binary]="fzf"
+    [tool_name]="fzf" 
+    [tool_version]="latest"
+    [tool_url]=""
+)
 
-if ! which rust-analyzer > /dev/null
-then
-    curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.cargo/bin/rust-analyzer
-    chmod +x ~/.cargo/bin/rust-analyzer
-fi
+declare -A arr10=(
+    [tool_binary]="go"
+    [tool_name]="golang" 
+    [tool_version]="1.17.2"
+    [tool_url]=""
+)
 
-if ! which ltex-ls > /dev/null
-then
-    curl -o /tmp/ltex-ls.tar.gz -L https://github.com/valentjn/ltex-ls/releases/download/15.2.0/ltex-ls-15.2.0-linux-x64.tar.gz
-    mkdir -p ~/.local/share/lsp/ltex-ls
-    tar -xzf /tmp/ltex-ls.tar.gz -C ~/.local/share/lsp/ltex-ls
-    ln -s ~/.local/share/lsp/ltex-ls/ltex-ls-15.2.0/bin/ltex-ls ~/.local/bin/ltex-ls
-    rm -f /tmp/ltex-ls.tar.gz
-fi
+declare -A arr11=(
+    [tool_binary]="helm"
+    [tool_name]="helm" 
+    [tool_version]="latest"
+    [tool_url]=""
+)
 
-if ! which delta > /dev/null
-then
-    printf "\n##### Installing Delta #####\n\n"
-    asdf plugin add delta https://github.com/andweeb/asdf-delta.git > /dev/null || true
-    asdf install delta latest
-    asdf global delta latest
-fi
+declare -A arr12=(
+    [tool_binary]="ht"
+    [tool_name]="httpie-go" 
+    [tool_version]="latest"
+    [tool_url]=""
+)
 
-if ! which doctl > /dev/null
-then
-    printf "\n##### Installing Digital Ocean CLI #####\n\n"
-    asdf plugin-add doctl https://github.com/maristgeek/asdf-doctl.git > /dev/null || true
-    asdf install doctl 1.65.0
-    asdf global doctl 1.65.0
-fi
+declare -A arr13=(
+    [tool_binary]="k3d"
+    [tool_name]="k3d" 
+    [tool_version]="latest"
+    [tool_url]=""
+)
 
-if ! which duf > /dev/null
-then
-    printf "\n##### Installing duf #####\n\n"
-    asdf plugin add duf > /dev/null || true
-    asdf install duf latest
-    asdf global duf latest
-fi
+declare -A arr14=(
+    [tool_binary]="k9s"
+    [tool_name]="k9s" 
+    [tool_version]="latest"
+    [tool_url]=""
+)
 
-if ! which exa > /dev/null
-then
-    printf "\n##### Installing exa #####\n\n"
-    asdf plugin add exa > /dev/null || true
-    asdf install exa latest
-    asdf global exa latest
-fi
+declare -A arr15=(
+    [tool_binary]="kubectl"
+    [tool_name]="kubectl" 
+    [tool_version]="1.22.2"
+    [tool_url]=""
+)
 
-if ! which fd > /dev/null
-then
-    printf "\n##### Installing fd #####\n\n"
-    asdf plugin add fd > /dev/null || true
-    asdf install fd latest
-    asdf global fd latest
-fi
+declare -A arr16=(
+    [tool_binary]="node"
+    [tool_name]="nodejs" 
+    [tool_version]="16.13.0"
+    [tool_url]=""
+)
 
-if ! which fzf > /dev/null
-then
-    printf "\n##### Installing fzf #####\n\n"
-    asdf plugin add fzf > /dev/null || true
-    asdf install fzf latest
-    asdf global fzf latest
-fi
+declare -A arr17=(
+    [tool_binary]="poetry"
+    [tool_name]="poetry" 
+    [tool_version]="latest"
+    [tool_url]=""
+)
 
-if ! which go > /dev/null
-then
-    printf "\n##### Installing Golang #####\n\n"
-    asdf plugin-add golang https://github.com/kennyp/asdf-golang.git > /dev/null || true
-    asdf install golang 1.17.2
-    asdf global golang 1.17.2
-fi
+declare -A arr18=(
+    [tool_binary]="pulumi"
+    [tool_name]="pulumi" 
+    [tool_version]="latest"
+    [tool_url]=""
+)
 
-# Go binaries
-export GOBIN=$HOME/.local/bin
+declare -A arr19=(
+    [tool_binary]="python"
+    [tool_name]="python" 
+    [tool_version]="3.9.4"
+    [tool_url]=""
+)
 
-if ! which gopls > /dev/null
-then
-    go install golang.org/x/tools/gopls@latest
-fi
+declare -A arr20=(
+    [tool_binary]="sops"
+    [tool_name]="sops" 
+    [tool_version]="latest"
+    [tool_url]=""
+)
 
-if ! which swag > /dev/null
-then
-    go install github.com/swaggo/swag/cmd/swag@latest
-fi
+declare -A arr21=(
+    [tool_binary]="terraform"
+    [tool_name]="terraform" 
+    [tool_version]="latest"
+    [tool_url]=""
+)
 
-if ! which golangci-lint > /dev/null
-then
-    go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
-fi
+declare -A arr22=(
+    [tool_binary]="tilt"
+    [tool_name]="tilt" 
+    [tool_version]="latest"
+    [tool_url]=""
+)
 
-if ! which slides > /dev/null
-then
-  go install github.com/maaslalani/slides@latest
-fi
+declare -A arr23=(
+    [tool_binary]="zoxide"
+    [tool_name]="zoxide" 
+    [tool_version]="latest"
+    [tool_url]=""
+)
 
-if ! which dlv > /dev/null
-then
-  go install github.com/go-delve/delve/cmd/dlv@latest
-fi
+declare -A arr24=(
+    [tool_binary]="ansible"
+    [tool_name]="ansible-base" 
+    [tool_version]="latest"
+    [tool_url]="https://github.com/amrox/asdf-pyapp.git"
+)
 
-if ! which helm > /dev/null
-then
-    printf "\n##### Installing Helm #####\n\n"
-    asdf plugin-add helm https://github.com/Antiarchitect/asdf-helm.git > /dev/null || true
-    asdf install helm 3.7.1
-    asdf global helm 3.7.1
-fi
+declare -A arr25=(
+    [tool_binary]="bpytop"
+    [tool_name]="bpytop" 
+    [tool_version]="latest"
+    [tool_url]="https://github.com/amrox/asdf-pyapp.git"
+)
 
-if ! helm plugin list | grep diff > /dev/null
-then
-    helm plugin install https://github.com/databus23/helm-diff
-fi
+tools=("${!arr@}")
 
-if ! which ht > /dev/null
-then
-    printf "\n##### Installing httpie-go #####\n\n"
-    asdf plugin add httpie-go > /dev/null || true
-    asdf install httpie-go latest
-    asdf global httpie-go latest
-fi
+declare -n ref
 
-if ! which k3d > /dev/null
-then
-    printf "\n##### Installing k3d #####\n\n"
-    asdf plugin-add k3d https://github.com/spencergilbert/asdf-k3d.git > /dev/null || true
-    asdf install k3d 5.0.1
-    asdf global k3d 5.0.1
-fi
-
-if ! which k9s > /dev/null
-then
-    printf "\n##### Installing k9s #####\n\n"
-    asdf plugin-add k9s > /dev/null || true
-    asdf install k9s latest
-    asdf global k9s latest
-fi
-
-if ! which kubectl > /dev/null
-then
-    printf "\n##### Installing Kubernetes CLI #####\n\n"
-    asdf plugin-add kubectl https://github.com/asdf-community/asdf-kubectl.git > /dev/null || true
-    asdf install kubectl 1.22.2
-    asdf global kubectl 1.22.2
-fi
-
-if ! which kubeseal > /dev/null
-then
-    printf "\n##### Installing Kubeseal #####\n\n"
-    asdf plugin-add kubeseal > /dev/null || true
-    asdf install kubeseal 0.16.0
-    asdf global kubeseal 0.16.0
-fi
-
-if ! which node > /dev/null
-then
-    printf "\n##### Installing Nodejs #####\n\n"
-    asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git > /dev/null || true
-    asdf install nodejs 16.13.0
-    asdf global nodejs 16.13.0
-fi
-
-# Node global binaries
-if ! which cz > /dev/null
-then
-    npm install -g commitizen
-    npm install -g cz-emoji
-fi
-
-if ! which fx > /dev/null
-then
-    npm install -g fx
-fi
-
-if ! which live-server > /dev/null
-then
-    npm install -g live-server
-fi
-
-if ! which bash-language-server > /dev/null
-then
-    npm install -g bash-language-server
-fi
-
-if ! which docker-langserver > /dev/null
-then
-    npm install -g dockerfile-language-server-nodejs
-fi
-
-if ! which vscode-json-language-server > /dev/null
-then
-    npm install -g vscode-langservers-extracted
-fi
-
-if ! which svelteserver > /dev/null
-then
-    npm install -g svelte-language-server
-fi
-
-if ! which yaml-language-server > /dev/null
-then
-    npm install -g yaml-language-server
-fi
-
-DEBUGGERS_PATH=$HOME/.local/share/debuggers
-NODE_DEBUGGER_PATH=$DEBUGGERS_PATH/vscode-node-debug2
-if [ ! -d $NODE_DEBUGGER_PATH ]
-then
-    mkdir -p $DEBUGGERS_PATH 
-    cd $DEBUGGERS_PATH && git clone https://github.com/microsoft/vscode-node-debug2.git
-    cd $NODE_DEBUGGER_PATH && npm install && npm run build
-fi
-
-if ! which poetry > /dev/null
-then
-    printf "\n##### Installing Poerty #####\n\n"
-    asdf plugin-add poetry https://github.com/asdf-community/asdf-poetry.git > /dev/null || true
-    asdf install poetry latest
-    asdf global poetry latest
-fi
-
-if ! which pulumi > /dev/null
-then
-    printf "\n##### Installing Pulumi #####\n\n"
-    asdf plugin-add pulumi https://github.com/canha/asdf-pulumi.git > /dev/null || true
-    asdf install pulumi 3.16.0
-    asdf global pulumi 3.16.0
-fi
-
-if ! which python > /dev/null
-then
-    printf "\n##### Installing Python #####\n\n"
-    asdf plugin-add python > /dev/null || true
-    asdf install python 3.9.4
-    asdf global python 3.9.4
-fi
-
-if ! which sops > /dev/null
-then
-    printf "\n##### Installing SOPS #####\n\n"
-    asdf plugin-add sops https://github.com/feniix/asdf-sops.git > /dev/null || true
-    asdf install sops 3.7.1
-    asdf global sops 3.7.1
-fi
-
-if ! which terraform > /dev/null
-then
-    printf "\n##### Installing Terraform #####\n\n"
-    asdf plugin-add terraform https://github.com/asdf-community/asdf-hashicorp.git > /dev/null || true
-    asdf install terraform 1.0.11
-    asdf global terraform 1.0.11
-fi
-
-if ! which terraform-ls > /dev/null
-then
-    curl -o /tmp/terraform-ls.zip https://releases.hashicorp.com/terraform-ls/0.27.0/terraform-ls_0.27.0_linux_amd64.zip    
-    unzip /tmp/terraform-ls.zip -d /tmp/terraform-ls
-    mv /tmp/terraform-ls/terraform-ls ~/.local/bin/terraform-ls
-    chmod +x ~/.local/bin/terraform-ls
-    rm -f /tmp/terraform-ls.zip
-    rmdir /tmp/terraform-ls
-fi
-
-if ! which tilt > /dev/null
-then
-    printf "\n##### Installing Tilt #####\n\n"
-    asdf plugin add tilt > /dev/null || true
-    asdf install tilt latest
-    asdf global tilt latest
-fi
-
-if ! which zoxide > /dev/null
-then
-    printf "\n##### Installing Zoxide #####\n\n"
-    asdf plugin add zoxide > /dev/null || true
-    asdf install zoxide latest
-    asdf global zoxide latest
-fi
+for ref in "${tools[@]}"
+do
+    if ! which "${ref[tool_binary]}" > /dev/null || [ $FORCE == true ]
+    then
+        printf "\n##### Installing %s #####\n\n" "${ref[tool_name]}"
+        asdf plugin add "${ref[tool_name]}" "${ref[tool_url]}" > /dev/null || true
+        asdf install "${ref[tool_name]}" "${ref[tool_version]}"
+        asdf global "${ref[tool_name]}" "${ref[tool_version]}"
+    fi
+done
 
