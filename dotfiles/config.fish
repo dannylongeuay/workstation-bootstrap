@@ -4,7 +4,7 @@ if status is-interactive
   source ~/.asdf/plugins/java/set-java-home.fish
   doctl completion fish | source
   zoxide init fish | source
-  export EDITOR=nvim
+  export EDITOR=hx
   alias daws='docker run --rm -it -v ~/.aws:/root/.aws -v (pwd):/aws -e AWS_PROFILE amazon/aws-cli'
   alias psource="source (poetry env list --full-path | grep Activated | cut -d' ' -f1)/bin/activate.fish"
   abbr --add --global el exa -lh
