@@ -8,6 +8,8 @@ if status is-interactive
   alias daws='docker run --rm -it -v ~/.aws:/root/.aws -v (pwd):/aws -e AWS_PROFILE amazon/aws-cli'
   alias psource="source (poetry env list --full-path | grep Activated | cut -d' ' -f1)/bin/activate.fish"
   abbr --add --global el exa -lh
+  abbr --add --global ela exa -lha
+  abbr --add --global elt exa -lhT
   abbr --add --global et exa -T
   abbr --add --global ga git add -A
   abbr --add --global gb git branch

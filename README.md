@@ -271,6 +271,8 @@ Synchronize panes - <kbd>Ctrl</kbd>+<kbd>s</kbd>
 **Fish abbreviations:**
 
 - `el` = exa -lh
+- `ela` = exa -lha
+- `elt` = exa -lht
 - `et` = exa -T
 - `g` = git
 - `ga` = git add -A
