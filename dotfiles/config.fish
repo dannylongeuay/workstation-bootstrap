@@ -67,9 +67,8 @@ function fish_title
   echo (basename (prompt_pwd)) \| $argv;
 end
 
-function fish_git_fetch --on-variable PWD
+function fish_git_status --on-variable PWD
   if test -d ./.git/
-    echo "Fetching origin..."
-    git fetch -v
+    git status
   end
 end
