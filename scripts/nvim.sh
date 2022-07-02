@@ -16,7 +16,7 @@ fi
 # Install neovim stable
 if [ ! -f /usr/local/bin/nvim-stable ] || [ $FORCE == true ]
 then
-  curl -L https://github.com/neovim/neovim/releases/download/stable/nvim.appimage -o /tmp/nvim-stable
+  curl -L https://github.com/neovim/neovim/releases/download/v0.7.2/nvim.appimage -o /tmp/nvim-stable
   chmod u+x /tmp/nvim-stable
   sudo mv /tmp/nvim-stable /usr/local/bin
 fi
@@ -37,10 +37,4 @@ else
 fi
 
 cp -r nvim/* ~/.config/nvim
-
-if [ -d ~/.local/share/nvim/site/pack/packer/start/packer.nvim ]
-then
-  nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-fi
-printf "Installed Neovim config\n"
 
