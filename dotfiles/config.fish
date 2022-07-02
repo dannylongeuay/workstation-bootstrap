@@ -67,8 +67,3 @@ function fish_title
   echo (basename (prompt_pwd)) \| $argv;
 end
 
-function fish_git_status --on-variable PWD
-  if test -d ./.git/
-    git status
-  end
-end
