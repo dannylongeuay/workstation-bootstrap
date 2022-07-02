@@ -1,35 +1,34 @@
 #!/bin/bash
+set -e
+
+FORCE=$1
 
 printf "\n##### Installing Helix Editor #####\n\n"
 
-CARGO_ROOT_DIR=~/.cargo
-REPO_DIR=~/dev/helix
 CONFIG_DIR=~/.config/helix
-RUNTIME_DIR=$REPO_DIR/runtime
-RUNTIME_LINK_DIR=$CONFIG_DIR/runtime
+BACKUP_DIR=~/.config/helix.bak
+
+if [ ! -f /usr/local/bin/hx-stable ] || [ $FORCE == true ]
+then
+  curl -L https://github.com/helix-editor/helix/releases/download/22.05/helix-22.05-x86_64.AppImage -o /tmp/hx-stable
+  chmod u+x /tmp/hx-stable
+  sudo mv /tmp/hx-stable /usr/local/bin
+fi
+
+if [ ! -L /usr/local/bin/hx ]
+then
+  sudo ln -s /usr/local/bin/hx-stable /usr/local/bin/hx
+fi
 
 if [ ! -d $CONFIG_DIR ]
 then
   mkdir -p $CONFIG_DIR
+else
+  rm -rf $BACKUP_DIR
+  mv $CONFIG_DIR $BACKUP_DIR
+  printf "Created Helix Editor backup config\n"
+  mkdir -p $CONFIG_DIR
 fi
 
-if [ ! -d $REPO_DIR ]
-then
-  git clone https://github.com/helix-editor/helix ~/dev/helix
-fi
-
-pushd $REPO_DIR
-git pull > /dev/null
-
-if [ ! -L $RUNTIME_LINK_DIR ]
-then
-  sudo ln -s $RUNTIME_DIR $RUNTIME_LINK_DIR
-fi
-
-cargo install --path helix-term --root $CARGO_ROOT_DIR
-$CARGO_ROOT_DIR/bin/hx --grammar fetch > /dev/null || echo "Unable to fetch grammars"
-$CARGO_ROOT_DIR/bin/hx --grammar build > /dev/null || echo "Unable to build grammers"
-
-popd
-cp dotfiles/helix-config.toml ~/.config/helix/config.toml
-cp dotfiles/helix-languages.toml ~/.config/helix/languages.toml
+cp dotfiles/helix-config.toml $CONFIG_DIR/config.toml
+cp dotfiles/helix-languages.toml $CONFIG_DIR/languages.toml

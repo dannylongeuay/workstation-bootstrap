@@ -38,3 +38,8 @@ fi
 
 cp -r nvim/* ~/.config/nvim
 
+if [ -d ~/.local/share/nvim/site/pack/packer/start/packer.nvim ]
+then
+  nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+fi
+

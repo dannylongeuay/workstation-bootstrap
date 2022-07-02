@@ -48,7 +48,7 @@ printf "\n##### Bootstrapping Process Started #####\n"
 /bin/bash scripts/nvim.sh $FORCE
 
 # Install Helix Editor
-/bin/bash scripts/helix.sh
+/bin/bash scripts/helix.sh $FORCE
 
 # Copy dotfiles
 /bin/bash scripts/dotfiles.sh
