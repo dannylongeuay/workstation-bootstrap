@@ -31,6 +31,11 @@ else
     printf "ltex-ls already installed...\n"
 fi
 
+if [ ! -d ~/.cargo/bin ]
+then
+  mkdir -p ~/.cargo/bin
+fi
+
 if ! which rust-analyzer > /dev/null || [ $FORCE == true ]
 then
     printf "rust-analyzer installing...\n"

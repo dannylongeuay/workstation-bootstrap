@@ -7,12 +7,6 @@ printf "\n##### Installing Crates #####\n\n"
 
 . $HOME/.asdf/asdf.sh
 
-# Rust crates
-if [ ! -d ~/.cargo ]
-then
-  mkdir -p ~/.cargo
-fi
-
 declare -A arr1=(
     [bin]="stylua"
     [crate]="stylua"
