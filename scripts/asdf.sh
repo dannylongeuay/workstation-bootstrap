@@ -194,6 +194,13 @@ declare -A arr25=(
     [tool_url]="https://github.com/amrox/asdf-pyapp.git"
 )
 
+declare -A arr26=(
+    [tool_binary]="java"
+    [tool_name]="java" 
+    [tool_version]="openjdk-18.0.1"
+    [tool_url]=""
+)
+
 tools=("${!arr@}")
 
 declare -n ref
