@@ -8,7 +8,7 @@ printf "\n##### Installing Language Servers #####\n\n"
 if ! which lua-language-server > /dev/null || [ $FORCE == true ]
 then
     printf "lua-language-server installing...\n"
-    rm ~/.local/bin/lua-language-server
+    rm ~/.local/bin/lua-language-server || true
     curl -o /tmp/lua-language-server.tar.gz -L https://github.com/sumneko/lua-language-server/releases/download/3.2.3/lua-language-server-3.2.3-linux-x64.tar.gz
     mkdir -p ~/.local/share/lsp/lua-language-server
     tar -xzf /tmp/lua-language-server.tar.gz -C ~/.local/share/lsp/lua-language-server
@@ -21,7 +21,7 @@ fi
 if ! which ltex-ls > /dev/null || [ $FORCE == true ]
 then
     printf "ltex-ls installing...\n"
-    rm ~/.local/bin/ltex-ls
+    rm ~/.local/bin/ltex-ls || true
     curl -o /tmp/ltex-ls.tar.gz -L https://github.com/valentjn/ltex-ls/releases/download/15.2.0/ltex-ls-15.2.0-linux-x64.tar.gz
     mkdir -p ~/.local/share/lsp/ltex-ls
     tar -xzf /tmp/ltex-ls.tar.gz -C ~/.local/share/lsp/ltex-ls
