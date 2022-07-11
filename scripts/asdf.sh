@@ -201,6 +201,13 @@ declare -A arr26=(
     [tool_url]=""
 )
 
+declare -A arr27=(
+    [tool_binary]="glab"
+    [tool_name]="glab" 
+    [tool_version]="1.22.0"
+    [tool_url]=""
+)
+
 tools=("${!arr@}")
 
 declare -n ref

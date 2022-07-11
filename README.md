@@ -282,7 +282,8 @@ Synchronize panes - <kbd>Ctrl</kbd>+<kbd>s</kbd>
 - `gc` = git checkout
 - `gcb` = git checkout -b
 - `gd` = git diff HEAD
-- `gl` = git log --oneline
+- `gl` = glab
+- `glo` = git log --oneline
 - `gpl` = git pull
 - `gm` = git merge
 - `gmc` = git merge --continue

@@ -18,7 +18,8 @@ if status is-interactive
   abbr --add --global gc git checkout
   abbr --add --global gcb git checkout -b
   abbr --add --global gd git diff HEAD
-  abbr --add --global gl "git log --oneline"
+  abbr --add --global gl glab
+  abbr --add --global glo "git log --oneline"
   abbr --add --global gm git merge
   abbr --add --global gmc "git merge --continue"
   abbr --add --global gpl git pull
