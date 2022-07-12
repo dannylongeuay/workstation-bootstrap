@@ -270,6 +270,7 @@ Synchronize panes - <kbd>Ctrl</kbd>+<kbd>s</kbd>
 
 **Fish abbreviations:**
 
+- `awsso` = aws_sso_login
 - `el` = exa -lh
 - `ela` = exa -lha
 - `elt` = exa -lht

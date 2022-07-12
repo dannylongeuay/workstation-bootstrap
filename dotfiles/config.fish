@@ -7,6 +7,7 @@ if status is-interactive
   export EDITOR=hx
   alias daws='docker run --rm -it -v ~/.aws:/root/.aws -v (pwd):/aws -e AWS_PROFILE amazon/aws-cli'
   alias psource="source (poetry env list --full-path | grep Activated | cut -d' ' -f1)/bin/activate.fish"
+  abbr --add --global awsso aws_sso_login
   abbr --add --global el exa -lh
   abbr --add --global ela exa -lha
   abbr --add --global elt exa -lhT
@@ -44,7 +45,7 @@ function show-path
   end
 end
 
-function aws_login
+function aws_azure_login
   if test $argv
     docker run --rm -it -v ~/.aws:/root/.aws sportradar/aws-azure-login --profile=$argv --no-prompt
     export AWS_PROFILE=$argv
@@ -54,12 +55,30 @@ function aws_login
   end
 end
 
-function kconf
-  if test $argv
-    aws eks update-kubeconfig --name $argv --region us-west-2
-    export KUBE_CLUSTER_CONTEXT=$argv
+function aws_sso_login
+  if test (count $argv) -eq 1
+    export AWS_PROFILE=sso
+    aws sso login
+    export AWS_PROFILE=$argv
   else
-    echo "Specifiy the cluster name! i.e. 'kconf infra-prod-usw2-a'"
+    echo "One argument expected, 'aws_sso_login <profile>'"
+  end
+end
+
+function klist
+  if test (count $argv) -eq 1
+    aws eks list-clusters --region $argv[1]
+  else
+    echo "One argument expected, 'klist <region>'"
+  end
+end
+
+function kconf
+  if test (count $argv) -eq 2
+    aws eks update-kubeconfig --name $argv[1] --region $argv[2]
+    export KUBE_CLUSTER_CONTEXT=$argv[1]
+  else
+    echo "Two arguments expected, 'kconf <name> <region>'"
   end
 end
 
