@@ -13,12 +13,15 @@ if status is-interactive
   abbr --add --global elt exa -lhT
   abbr --add --global et exa -T
   abbr --add --global ga git add -A
+  abbr --add --global gap git add -p
   abbr --add --global gb git branch
   abbr --add --global gbd git branch -d
   abbr --add --global gbD git branch -D
   abbr --add --global gc git checkout
   abbr --add --global gcb git checkout -b
-  abbr --add --global gd git diff HEAD
+  abbr --add --global gd git diff
+  abbr --add --global gdh git diff HEAD
+  abbr --add --global gds "git diff --staged"
   abbr --add --global gl glab
   abbr --add --global glo "git log --oneline"
   abbr --add --global gm git merge

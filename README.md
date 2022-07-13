@@ -282,7 +282,9 @@ Synchronize panes - <kbd>Ctrl</kbd>+<kbd>s</kbd>
 - `gbD` = git branch -D
 - `gc` = git checkout
 - `gcb` = git checkout -b
-- `gd` = git diff HEAD
+- `gd` = git diff
+- `gdh` = git diff HEAD
+- `gds` = git diff --staged
 - `gl` = glab
 - `glo` = git log --oneline
 - `gpl` = git pull
