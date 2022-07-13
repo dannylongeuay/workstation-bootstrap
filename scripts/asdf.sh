@@ -208,6 +208,13 @@ declare -A arr27=(
     [tool_url]=""
 )
 
+declare -A arr28=(
+    [tool_binary]="flux"
+    [tool_name]="flux2" 
+    [tool_version]="0.31.3"
+    [tool_url]=""
+)
+
 tools=("${!arr@}")
 
 declare -n ref
