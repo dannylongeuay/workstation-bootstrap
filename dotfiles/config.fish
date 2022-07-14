@@ -8,6 +8,7 @@ if status is-interactive
   alias daws='docker run --rm -it -v ~/.aws:/root/.aws -v (pwd):/aws -e AWS_PROFILE amazon/aws-cli'
   alias psource="source (poetry env list --full-path | grep Activated | cut -d' ' -f1)/bin/activate.fish"
   abbr --add --global awsso aws_sso_login
+  abbr --add --global cf create_file
   abbr --add --global el exa -lh
   abbr --add --global ela exa -lha
   abbr --add --global elt exa -lhT
@@ -42,14 +43,24 @@ if status is-interactive
   fish_add_path $HOME/.cargo/bin
 end
 
-function show-path
+function show_path
   for item in $PATH
     echo $item
   end
 end
 
+function create_file
+  if test (count $argv) -eq 1
+    mkdir -p dirname $argv[1] && touch $argv[1]
+  else
+    echo "One argument expected, 'create_file <path>'"
+  end
+end
+
 function aws_azure_login
-  if test $argv
+  if test (count $argv) -gt 1
+    echo "One or zero argument(s) expected, 'aws_azure_login [<profile>]'"
+  else if test (count $argv) -eq 1
     docker run --rm -it -v ~/.aws:/root/.aws sportradar/aws-azure-login --profile=$argv --no-prompt
     export AWS_PROFILE=$argv
   else
