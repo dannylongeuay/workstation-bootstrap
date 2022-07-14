@@ -51,7 +51,7 @@ end
 
 function create_file
   if test (count $argv) -eq 1
-    mkdir -p dirname $argv[1] && touch $argv[1]
+    mkdir -p (dirname $argv[1]) && touch $argv[1]
   else
     echo "One argument expected, 'create_file <path>'"
   end
