@@ -51,9 +51,17 @@ end
 
 function create_file
   if test (count $argv) -eq 1
-    mkdir -p (dirname $argv[1]) && touch $argv[1]
+    mkdir -p (dirname $argv) && touch $argv
   else
     echo "One argument expected, 'create_file <path>'"
+  end
+end
+
+function aprof
+  if test (count $argv) -eq 1
+    export AWS_PROFILE=$argv
+  else
+    echo "One argument expected, 'aws_sso_login <profile>'"
   end
 end
 
@@ -81,7 +89,7 @@ end
 
 function klist
   if test (count $argv) -eq 1
-    aws eks list-clusters --region $argv[1]
+    aws eks list-clusters --region $argv
   else
     echo "One argument expected, 'klist <region>'"
   end
@@ -93,6 +101,15 @@ function kconf
     export KUBE_CLUSTER_CONTEXT=$argv[1]
   else
     echo "Two arguments expected, 'kconf <name> <region>'"
+  end
+end
+
+function kprof
+  if test (count $argv) -eq 1
+    export KUBE_CLUSTER_CONTEXT=$argv
+    kubectl config use-context $argv
+  else
+    echo "One argument expected, 'kprof <profile>'"
   end
 end
 
