@@ -12,11 +12,6 @@ declare -A arr1=(
     [packages]="commitizen cz-emoji"
 )
 
-declare -A arr2=(
-    [bin]="fx"
-    [packages]="fx"
-)
-
 declare -A arr3=(
     [bin]="live-server"
     [packages]="live-server"

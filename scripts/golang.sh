@@ -35,6 +35,11 @@ declare -A arr5=(
     [url]="golang.org/x/tools/gopls@latest"
 )
 
+declare -A arr6=(
+    [bin]="fx"
+    [url]="github.com/antonmedv/fx@latest"
+)
+
 refs=("${!arr@}")
 
 declare -n ref
