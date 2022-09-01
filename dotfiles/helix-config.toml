@@ -9,4 +9,4 @@ insert = "bar"
 select = "underline"
 
 [keys.normal]
-C-y = ":lang bash"
+C-y = ":lang gotmpl"
