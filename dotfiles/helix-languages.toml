@@ -12,7 +12,32 @@ language-server = { command = "ltex-ls" }
 file-types = ["md"]
 scope = "source.markdown"
 roots = []
+formatter = { command = 'prettier', args = ["--parser", "markdown"] }
+
+[[language]]
+name = "html"
+formatter = { command = 'prettier', args = ["--parser", "html"] }
+
+[[language]]
+name = "json"
+formatter = { command = 'prettier', args = ["--parser", "json"] }
+
+[[language]]
+name = "css"
+formatter = { command = 'prettier', args = ["--parser", "css"] }
+auto-format = true
+
+[[language]]
+name = "javascript"
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+auto-format = true
 
 [[language]]
 name = "typescript"
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "python"
+formatter = { command = "black", args = ["--quiet", "-"] }
 auto-format = true
