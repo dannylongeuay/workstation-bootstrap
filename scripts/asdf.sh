@@ -85,7 +85,7 @@ declare -A arr9=(
 declare -A arr10=(
     [tool_binary]="go"
     [tool_name]="golang" 
-    [tool_version]="1.17.2"
+    [tool_version]="1.19.1"
     [tool_url]=""
 )
 
@@ -176,7 +176,7 @@ declare -A arr22=(
 declare -A arr23=(
     [tool_binary]="zoxide"
     [tool_name]="zoxide" 
-    [tool_version]="latest"
+    [tool_version]="0.8.1"
     [tool_url]=""
 )
 
