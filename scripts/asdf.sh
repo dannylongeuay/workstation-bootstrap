@@ -15,6 +15,7 @@ then
 else
     . $HOME/.asdf/asdf.sh
     asdf update
+    asdf plugin update --all
 fi
 
 . $HOME/.asdf/asdf.sh
@@ -176,7 +177,7 @@ declare -A arr22=(
 declare -A arr23=(
     [tool_binary]="zoxide"
     [tool_name]="zoxide" 
-    [tool_version]="0.8.1"
+    [tool_version]="0.8.3"
     [tool_url]=""
 )
 
