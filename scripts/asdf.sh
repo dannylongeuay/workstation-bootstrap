@@ -37,7 +37,7 @@ declare -A arr2=(
 declare -A arr3=(
     [tool_binary]="cargo"
     [tool_name]="rust" 
-    [tool_version]="1.61.0"
+    [tool_version]="1.65.0"
     [tool_url]=""
 )
 
