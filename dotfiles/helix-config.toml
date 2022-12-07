@@ -3,6 +3,7 @@ theme = "tokyonight_storm"
 [editor]
 mouse = false
 true-color = true
+color-modes = true
 
 [editor.cursor-shape]
 insert = "bar"
