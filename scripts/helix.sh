@@ -10,7 +10,7 @@ BACKUP_DIR=~/.config/helix.bak
 
 if [ ! -f /usr/local/bin/hx-stable ] || [ $FORCE == true ]
 then
-  curl -L https://github.com/helix-editor/helix/releases/download/22.12/helix-22.12-x86_64.AppImage -o /tmp/hx-stable
+  curl -L https://github.com/helix-editor/helix/releases/download/23.03/helix-23.03-x86_64.AppImage -o /tmp/hx-stable
   chmod u+x /tmp/hx-stable
   sudo mv /tmp/hx-stable /usr/local/bin
 fi
