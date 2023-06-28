@@ -17,6 +17,11 @@ declare -A arr2=(
     [crate]="taplo-cli"
 )
 
+declare -A arr3=(
+    [bin]="just"
+    [crate]="just"
+)
+
 refs=("${!arr@}")
 
 declare -n ref
