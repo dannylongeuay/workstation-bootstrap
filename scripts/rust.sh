@@ -22,6 +22,11 @@ declare -A arr3=(
     [crate]="just"
 )
 
+declare -A arr4=(
+    [bin]="trunk"
+    [crate]="trunk"
+)
+
 refs=("${!arr@}")
 
 declare -n ref
