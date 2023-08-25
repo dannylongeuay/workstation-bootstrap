@@ -31,20 +31,6 @@ else
     printf "ltex-ls already installed...\n"
 fi
 
-if [ ! -d ~/.cargo/bin ]
-then
-  mkdir -p ~/.cargo/bin
-fi
-
-if ! which rust-analyzer > /dev/null || [ $FORCE == true ]
-then
-    printf "rust-analyzer installing...\n"
-    curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.cargo/bin/rust-analyzer
-    chmod +x ~/.cargo/bin/rust-analyzer
-else
-    printf "rust-analyzer already installed...\n"
-fi
-
 if ! which terraform-ls > /dev/null || [ $FORCE == true ]
 then
     printf "terraform-ls installing...\n"
