@@ -114,7 +114,7 @@ declare -A arr13=(
 declare -A arr14=(
     [tool_binary]="k9s"
     [tool_name]="k9s" 
-    [tool_version]="0.25.18"
+    [tool_version]="0.27.4"
     [tool_url]=""
 )
 
@@ -213,6 +213,20 @@ declare -A arr28=(
     [tool_binary]="flux"
     [tool_name]="flux2" 
     [tool_version]="0.31.3"
+    [tool_url]=""
+)
+
+declare -A arr29=(
+    [tool_binary]="btm"
+    [tool_name]="bottom" 
+    [tool_version]="0.9.6"
+    [tool_url]=""
+)
+
+declare -A arr30=(
+    [tool_binary]="watchexec"
+    [tool_name]="watchexec" 
+    [tool_version]="latest"
     [tool_url]=""
 )
 

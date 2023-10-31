@@ -27,6 +27,26 @@ declare -A arr4=(
     [crate]="trunk"
 )
 
+declare -A arr5=(
+    [bin]="broot"
+    [crate]="broot"
+)
+
+declare -A arr6=(
+    [bin]="spt"
+    [crate]="spotify-tui"
+)
+
+declare -A arr7=(
+    [bin]="spotifyd"
+    [crate]="spotifyd"
+)
+
+declare -A arr8=(
+    [bin]="nu"
+    [crate]="nu"
+)
+
 refs=("${!arr@}")
 
 declare -n ref
