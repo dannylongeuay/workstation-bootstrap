@@ -2,15 +2,6 @@
 
 printf "\n##### Installing Dotfiles #####\n\n"
 
-cp dotfiles/bashrc ~/.bashrc
-printf "Installed .bashrc\n"
-
-cp dotfiles/czrc ~/.czrc
-printf "Installed .czrc\n"
-
-cp dotfiles/tmux.conf ~/.tmux.conf
-printf "Installed .tmux.conf\n"
-
 cp dotfiles/config.fish ~/.config/fish/config.fish
 printf "Installed config.fish\n"
 

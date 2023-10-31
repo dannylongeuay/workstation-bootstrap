@@ -41,9 +41,6 @@ printf "\n##### Bootstrapping Process Started #####\n"
 # Install Node Packages
 /bin/bash scripts/node.sh $FORCE
 
-# Install Helm Plugins
-/bin/bash scripts/helm.sh $FORCE
-
 # Install Helix Editor
 /bin/bash scripts/helix.sh $FORCE
 

@@ -7,11 +7,6 @@ printf "\n##### Installing Node Packages #####\n\n"
 
 . $HOME/.asdf/asdf.sh
 
-declare -A arr1=(
-    [bin]="cz"
-    [packages]="commitizen cz-emoji"
-)
-
 declare -A arr3=(
     [bin]="live-server"
     [packages]="live-server"
