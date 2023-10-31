@@ -138,7 +138,7 @@ function _gcm
     case '4'
       set cmd git commit -m "\"$argv[1]($argv[3])$breaking: $argv[2] $argv[4..-1]\""
     case '3'
-      set cmd git commit -m "\"$argv[1]$breaking: $argv[2] $argv[3..-1]\""
+      set cmd git commit -m "\"$argv[1](*)$breaking: $argv[2] $argv[3..-1]\""
     case '*'
       set cmd echo "Incorrect number of arguments"
   end
