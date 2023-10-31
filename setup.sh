@@ -44,9 +44,6 @@ printf "\n##### Bootstrapping Process Started #####\n"
 # Install Helm Plugins
 /bin/bash scripts/helm.sh $FORCE
 
-# Install Neovim
-/bin/bash scripts/nvim.sh $FORCE
-
 # Install Helix Editor
 /bin/bash scripts/helix.sh $FORCE
 
