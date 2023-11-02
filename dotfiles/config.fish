@@ -127,6 +127,10 @@ function fish_title
   echo (basename (prompt_pwd)) \| $argv;
 end
 
+function fish_greeting
+  neofetch
+end
+
 function _gcm
   argparse --name=_gcm 'b/breaking' -- $argv
   set -l breaking ""
