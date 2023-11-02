@@ -32,14 +32,9 @@ declare -A arr5=(
     [crate]="broot"
 )
 
-declare -A arr6=(
-    [bin]="spt"
-    [crate]="spotify-tui"
-)
-
 declare -A arr7=(
-    [bin]="spotifyd"
-    [crate]="spotifyd"
+    [bin]="spotify_player"
+    [crate]="spotify_player"
 )
 
 declare -A arr8=(
