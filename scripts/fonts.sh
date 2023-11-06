@@ -19,6 +19,11 @@ declare -A arr2=(
     [font_url]="https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/DejaVuSansMono.zip"
 )
 
+declare -A arr3=(
+    [zip_path]="$FONTS_DIR/Hack.zip"
+    [font_url]="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip"
+)
+
 fonts=("${!arr@}")
 
 declare -n ref

@@ -16,3 +16,5 @@ fi
 cp dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
 printf "Installed alacritty.yml\n"
 
+cp dotfiles/kitty.conf ~/.config/kitty/kitty.conf
+printf "Installed kitty.conf\n"

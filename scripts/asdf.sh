@@ -230,6 +230,13 @@ declare -A arr30=(
     [tool_url]=""
 )
 
+declare -A arr31=(
+    [tool_binary]="zellij"
+    [tool_name]="zellij" 
+    [tool_version]="latest"
+    [tool_url]=""
+)
+
 tools=("${!arr@}")
 
 declare -n ref
