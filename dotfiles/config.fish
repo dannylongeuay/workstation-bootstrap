@@ -127,8 +127,11 @@ function kprof
 end
 
 function fish_title
+  set -l title
   set -q argv[1]; or set argv fish
-  echo (basename (prompt_pwd)) \| $argv;
+  set title (basename (prompt_pwd)) \| $argv;
+  zellij action rename-tab "$title" > /dev/null 2>&1
+  echo $title
 end
 
 function fish_greeting
