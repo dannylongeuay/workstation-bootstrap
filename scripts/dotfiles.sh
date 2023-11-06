@@ -18,3 +18,11 @@ printf "Installed alacritty.yml\n"
 
 cp dotfiles/kitty.conf ~/.config/kitty/kitty.conf
 printf "Installed kitty.conf\n"
+
+if [ ! -d ~/.config/zellij ]
+then
+  mkdir -p ~/.config/zellij
+fi
+
+cp dotfiles/zellij.kdl ~/.config/zellij/config.kdl
+printf "Installed config.kdl for Zellij\n"

@@ -37,6 +37,10 @@ if status is-interactive
   abbr --add --global tmd "tmux new -s dev"
   abbr --add --global tma tmux a
   abbr --add --global xc "xclip -selection clipboard"
+  abbr --add --global zj "zellij"
+  abbr --add --global zjc "zellij -l compact"
+  abbr --add --global zjnc "zellij action new-tab -l compact"
+  abbr --add --global zjnd "zellij action new-tab -l default"
   abbr --add --global zz "z -"
   fish_add_path $HOME/.local/bin
   fish_add_path $HOME/.cargo/bin
