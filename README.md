@@ -130,7 +130,7 @@ The following is a list of tools installed using [asdf-vm](https://asdf-vm.com/)
 - [delta](https://github.com/dandavison/delta)
 - [doctl](https://github.com/digitalocean/doctl)
 - [duf](https://github.com/muesli/duf)
-- [exa](https://the.exa.website)
+- [eza](https://github.com/eza-community/eza)
 - [fd](https://github.com/sharkdp/fd)
 - [flux](https://github.com/fluxcd/flux2)
 - [fzf](https://github.com/junegunn/fzf)
@@ -187,7 +187,7 @@ Disk usage utility.
 
 ![Duf Example](https://github.com/dannylongeuay/workstation-bootstrap/blob/assets/duf.png)
 
-**Exa Example:**
+**Eza Example:**
 
 Modern replacement for `ls`.
 
@@ -273,10 +273,10 @@ Synchronize panes - <kbd>Ctrl</kbd>+<kbd>s</kbd>
 
 - `awsso` = aws_sso_login
 - `cf` = create_file
-- `el` = exa -lh
-- `ela` = exa -lha
-- `elt` = exa -lht
-- `et` = exa -T
+- `el` = eza -lh
+- `ela` = eza -lha
+- `elt` = eza -lht
+- `et` = eza -T
 - `g` = git
 - `ga` = git add -A
 - `gb` = git branch

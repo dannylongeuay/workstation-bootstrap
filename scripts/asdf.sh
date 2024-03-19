@@ -63,8 +63,8 @@ declare -A arr6=(
 )
 
 declare -A arr7=(
-    [tool_binary]="exa"
-    [tool_name]="exa" 
+    [tool_binary]="eza"
+    [tool_name]="eza" 
     [tool_version]="latest"
     [tool_url]=""
 )

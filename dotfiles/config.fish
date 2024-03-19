@@ -9,10 +9,10 @@ if status is-interactive
   alias psource="source (poetry env list --full-path | grep Activated | cut -d' ' -f1)/bin/activate.fish"
   abbr --add --global awsso aws_sso_login
   abbr --add --global cf create_file
-  abbr --add --global el exa -lh
-  abbr --add --global ela exa -lha
-  abbr --add --global elt exa -lhT
-  abbr --add --global et exa -T
+  abbr --add --global el eza -lh
+  abbr --add --global ela eza -lha
+  abbr --add --global elt eza -lhT
+  abbr --add --global et eza -T
   abbr --add --global ga git add -A
   abbr --add --global gap git add -p
   abbr --add --global gb git branch
