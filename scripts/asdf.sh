@@ -237,6 +237,13 @@ declare -A arr31=(
     [tool_url]=""
 )
 
+declare -A arr32=(
+    [tool_binary]="dagger"
+    [tool_name]="dagger" 
+    [tool_version]="latest"
+    [tool_url]=""
+)
+
 tools=("${!arr@}")
 
 declare -n ref
