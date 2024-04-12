@@ -64,7 +64,7 @@ function aprof
   if test (count $argv) -eq 1
     export AWS_PROFILE=$argv
   else
-    echo "One argument expected, 'aws_sso_login <profile>'"
+    echo "One argument expected, 'aprof <account_profile>'"
   end
 end
 
@@ -86,7 +86,7 @@ function aws_sso_login
     aws sso login
     export AWS_PROFILE=$argv
   else
-    echo "One argument expected, 'aws_sso_login <profile>'"
+    echo "One argument expected, 'aws_sso_login <account_profile>'"
   end
 end
 
