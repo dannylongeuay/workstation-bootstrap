@@ -186,6 +186,6 @@ plugins {
 
 pane_frames false
 
-theme "tokyo-night-storm"
+theme "catppuccin-mocha"
 
 default_mode "locked"

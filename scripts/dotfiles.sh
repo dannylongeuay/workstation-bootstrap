@@ -26,3 +26,12 @@ fi
 
 cp dotfiles/zellij.kdl ~/.config/zellij/config.kdl
 printf "Installed config.kdl for Zellij\n"
+
+
+if [ ! -d ~/.config/wezterm ]
+then
+  mkdir -p ~/.config/wezterm
+fi
+
+cp dotfiles/wezterm.lua ~/.config/wezterm/wezterm.lua
+printf "Installed wezterm.lua for wezterm\n"
