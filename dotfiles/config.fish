@@ -1,5 +1,5 @@
 if status is-interactive
-    starship init fish | source
+    # starship init fish | source
     source ~/.asdf/asdf.fish
     source ~/.asdf/plugins/java/set-java-home.fish
     doctl completion fish | source

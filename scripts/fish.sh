@@ -22,6 +22,10 @@ if test ! (fisher list | grep fzf.fish) || $argv[1] == true
   fisher install PatrickF1/fzf.fish
 end
 
+if test ! (fisher list | grep tide) || $argv[1] == true
+  fisher install IlanCosman/tide@v6
+end
+
 if test ! (fisher list | grep fish-kubectl-completions) || $argv[1] == true
   fisher install evanlucas/fish-kubectl-completions
 end
