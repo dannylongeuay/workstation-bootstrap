@@ -12,6 +12,7 @@ config.show_new_tab_button_in_tab_bar = false
 config.show_tab_index_in_tab_bar = false
 config.tab_bar_at_bottom = true
 config.tab_max_width = 48
+
 -- The filled in variant of the < symbol
 local SOLID_LEFT_ARROW = wezterm.nerdfonts.pl_right_hard_divider
 
@@ -21,16 +22,25 @@ local SOLID_RIGHT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
 wezterm.on(
   'format-tab-title',
   function(tab, _, _, _, hover, max_width)
-    local edge_background = '#11111b'
-    local background = '#11111b'
-    local foreground = '#6c7086'
+
+    local mocha = {
+    		mauve = "#cba6f7",
+    		text = "#cdd6f4",
+    		base = "#1e1e2e",
+    		mantle = "#181825",
+    		crust = "#11111b",
+    	}
+
+    local edge_background = mocha.crust
+    local background = mocha.mantle
+    local foreground = mocha.text
 
     if tab.is_active then
-      background = '#1e1e2e'
-      foreground = '#f9e2af'
+      background = mocha.mauve
+      foreground = mocha.crust
     elseif hover then
-      background = '#313244'
-      foreground = '#cdd6f4'
+      background = mocha.base
+      foreground = mocha.text
     end
 
     local edge_foreground = background
